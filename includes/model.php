@@ -14,13 +14,12 @@ $base_url = "http://localhost/ourco";
 if($_SESSION){
 $userid =  $_SESSION['userid'];
 $superpass_id = $_SESSION['id'];
-// echo $userid;
+echo $userid;
 $poweruser = DB::fetch("SELECT * FROM `users_tb` WHERE `id`='$userid'")[0];
-
-
 $powerwallet = DB::fetch("SELECT * FROM `wallet` WHERE `user_id`='$userid'")[0];
-
 $powerwalletInfo = DB::fetch("SELECT * FROM `payment_acc_tb` WHERE `user_id`='$userid'")[0];
+print_r($poweruser[0]);
+echo '<script>alert("Hey '.$poweruser.' ")</script>';
 $user_currency_symbol='$';
 
 // $poweruser = DB::fetch("SELECT * FROM `users_tb` WHERE `id`='$userid'")[0];
@@ -114,17 +113,17 @@ $user_currency_symbol='$';
     // $req = $_POST['req'];
     // //echo 'hey';
     // print_r($_FILES);
-    
+
     // $proof_img = img::upload('Proof');
     // $sql = "UPDATE `requests_tb` SET `status` = 'confirmed', `proof_img` = '$proof_img' WHERE `requests_tb`.`id` = $req;";
-    
+
     // $try = DB::query($sql);
     // if($try) {
     //     $refPage = $_SERVER['referer'];
     //     header('location: ../pages');
     // }
     // //echo '<script>alert("heyoo")</script>';
-    
+
   // $img1 = img::upload('fileToUpload');
   // db_insert($img1, $code);
 //   }
@@ -135,16 +134,16 @@ $user_currency_symbol='$';
 //     $req = $_POST['req'];
 //     // echo 'hey'.$req;
 //     // print_r($_FILES);
-    
+
 //     // $proof_img = img::upload('Proof');
 //     $sql = "UPDATE `requests_tb` SET `status` = 'approved' WHERE `requests_tb`.`id` = '$req' AND `requests_tb`.`status` = 'confirmed';";
-    
+
 //     $try = DB::query($sql);
 //     $try->rowCount();
 //     print_r($try->rowCount());
 
 //     if($try->rowCount()){
-        
+
 //         $sql = "UPDATE `ref_points_tb` SET `points` = `points`+2 WHERE `ref_points_tb`.`user_id` = '$boo_id';";
 //         DB::query($sql);
 //         $sql = "UPDATE `boom_ponits` SET `points` = `points`+5 WHERE `boom_ponits`.`user_id` = '$boo_id';";
@@ -162,11 +161,10 @@ $user_currency_symbol='$';
 //         header('location: ../pages');
 //     }
 //     //echo '<script>alert("heyoo")</script>';
-    
+
 //   // $img1 = img::upload('fileToUpload');
 //   // db_insert($img1, $code);
   }
-  
-  
+
+
 ?>
- 

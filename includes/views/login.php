@@ -10,7 +10,7 @@ require ('../includes/models/login.php');
                     </div>
                     <div class="panel-body">
                         <form name="login_form" role="form" method="post" action="" autocomplete="on" >
-                            
+
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Phone No." name="login_id" type="number" autofocus>
                                 </div>
@@ -25,7 +25,7 @@ require ('../includes/models/login.php');
                                 <!- Change this to a button or input when using this as a form ->
                                 <input type="submit" name="login_form_submit" class="btn btn-lg btn-primary btn-block" value="Login">
 
-                            
+
                         </form>
 
                         <hr>
@@ -34,7 +34,7 @@ require ('../includes/models/login.php');
 <br/>
             <p class="text-center text-gray">Don't have an account?</p>
             <a href="join" class="btn btn-default btn-block">Sign Up / Join</a>
-                    </div>  
+                    </div>
                 </div>
             </div>
         </div>
@@ -74,9 +74,9 @@ require ('../includes/models/login.php');
                     </div>
                     <input name="login_form_submit" type="submit" class="btn btn-primary btn-user btn-block" value="Login"/>
                     <hr>
-                    <a href="" class="btn btn-google btn-user btn-block">
+                    <!-- <a href="" class="btn btn-google btn-user btn-block">
                       <i class="fab fa-bond fa-fw"></i> Login with Bond
-                    </a>
+                    </a> -->
                     <!-- <a href="index.html" class="btn btn-facebook btn-user btn-block">
                       <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
                     </a> -->

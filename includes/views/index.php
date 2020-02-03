@@ -1,17 +1,25 @@
 			<!-- start banner Area -->
-			<section class="banner-area relative" id="home">
-				<div class="container">
-					<div class="row fullscreen d-flex align-items-center justify-content-end">
-						<div class="banner-content col-lg-7 col-md-12">
-							<!-- <h2 class="text-uppercase text-danger bg-primary p-3">Merry Christmas <i class="fa fa-heart-o pull-right"></i></h2> -->
-						</div>												
+			<!-- <br/><br/><br/><br/><br/><br/><br/><br/><br/> -->
+			<section class="banner-area mt-4 mr-4" id="home">
+				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+				<!-- <br/><br/><br/><br/><br/><br/><br/> -->
+				<div class="d-none d-sm-block">
+					<br/><br/><br/><br/><br/><br/><br/><br/>
+					<br/><br/><br/><br/><br/><br/><br/><br/>
+				</div>
+				<div class="container mt-4">
+					<div class="row d-flex align-items-center justify-content-end ">
+						<div class="banner-content col-lg-7 col-md-12 ">
+							<!-- <img src="..." class="img-fluid pull-xs-left" alt="..."><br/> -->
+							<h3 class="text-uppercase text-primary bg-gray-400 p-3">Ourcomunity, Where the m<i class="fa fa-heart-o"></i>ney gr<i class="fa fa-heart-o"></i>ws</h3>
+						</div>
 					</div>
 				</div>
 			</section>
-			<!-- End banner Area -->	
-			
-			<!-- Start feature Area --> 
-			
+			<!-- End banner Area -->
+
+			<!-- Start feature Area -->
+
 			<!-- End feature Area -->
 
 			<!-- Start testimonial Area -->
@@ -25,7 +33,7 @@
 								<p class="text-white">Who are in extremely love with awesome system.</p>
 							</div>
 						</div>
-					</div>						
+					</div>
 					<div class="row">
 						<div class="active-testimonial">
 							<div class="single-testimonial item d-flex flex-row">
@@ -51,10 +59,10 @@
 									<h4 mt-30>Example Name: Mark Alviro Wiens</h4>
 									<p>Example Status: CEO at Google</p>
 								</div>
-							</div>								
-						</div>					
+							</div>
+						</div>
 					</div>
-				</div>	
+				</div>
 			</section>
 			<!-- End testimonial Area -->
 
@@ -65,7 +73,7 @@
 						<div class="col-lg-6 about-left">
 
                                 <!-- <div class="row"> -->
-		  
+
                                         <div class="">
                                           <div class="">
                                             <!-- <i class="fa fa-angle-right m-auto text-primary"></i> -->
@@ -74,7 +82,7 @@
                                           <h3><ul>
                                               <li>Who are we and what we do? <i class="fa fa-heart-o"></i></li>
                                           <li>What we are not? <i class="fa fa-ban"></i>!!!</li>
-                                              
+
                                           <li>Why Invest with Us?</li>
                                       </ul></h3><br/>
                                       <!-- <i class="fa fa-angle-down m-auto text-primary"></i> -->
@@ -82,7 +90,7 @@
                                           <a class="lead mb-0" href="#intro_video">
                                             <i class="fa fa-youtube-play"></i> Get all your answers in the Intro <br/>video.
                                             </a>
-                                        
+
                                       </div>
                                       <!-- </div> -->
 
@@ -100,13 +108,13 @@
 						<div id="intro_video" class="col-lg-5 about-right no-padding relative" >
 							<div class="overlay overlay-bg"></div>
 							<a href="http://www.youtube.com/watch?v=SznPi2D1CRk" class="play-btn">	<img class="play" src="../static/vendorhome/img/play-btn.png" alt="">
-							</a>							
+							</a>
 							<img class="main img-fluid" src="../static/vendorhome/img/video-bg1.jpg" alt="">
 						</div>
 					</div>
-				</div>	
+				</div>
 			</section>
-			<!-- End about Area -->		
+			<!-- End about Area -->
 
 			<!-- Start offered Area -->
 			<!-- <section class="offered-area" id="weoffer">
@@ -116,41 +124,41 @@
 							<h1 class="mb-10 text-white">Our Offered Services</h1>
 							<p class="text-white">Who are in extremely love with eco friendly system.</p>
 						</div>
-					</div>					
+					</div>
 					<div class="row align-items-center justify-content-start">
 						<div class="col-lg-6 offered-left">
 							<div class="offer-wrap flex-row d-flex row">
 								<div class="col-4">
 									<div class="single-offer mb-30">
 										<a href="#"></a><img class="img-fluid" src="img/o1.png" alt=""></d>
-									</div> 
+									</div>
 								</div>
 								<div class="col-4">
 									<div class="single-offer mb-30">
 										<a href="#"></a><img class="img-fluid" src="img/o2.png" alt=""></d>
-									</div> 
+									</div>
 								</div>
 								<div class="col-4">
 									<div class="single-offer mb-30">
 										<a href="#"></a><img class="img-fluid" src="img/o3.png" alt=""></d>
-									</div> 
+									</div>
 								</div>
 								<div class="col-4">
 									<div class="single-offer">
 										<a href="#"></a><img class="img-fluid" src="img/o4.png" alt=""></d>
-									</div> 
+									</div>
 								</div>
 								<div class="col-4">
 									<div class="single-offer">
 										<a href="#"></a><img class="img-fluid" src="img/o5.png" alt=""></d>
-									</div> 
+									</div>
 								</div>
 								<div class="col-4">
 									<div class="single-offer">
 										<a href="#"></a><img class="img-fluid" src="img/o6.png" alt=""></d>
-									</div> 
-								</div>								
-							</div>																	
+									</div>
+								</div>
+							</div>
 						</div>
 						<div class="col-lg-5 offered-right">
 							<h4>Content Synchronization</h4>
@@ -160,10 +168,10 @@
 							<a href="#" class="primary-btn header-btn text-uppercase">View Details</a>
 						</div>
 					</div>
-				</div>	
+				</div>
 			</section> -->
 			<!-- End offered Area -->
-			
+
 
 			<!-- Start fact Area -->
 			<!-- <section class="facts-area section-gap">
@@ -184,13 +192,13 @@
 						<div class="col single-fact">
 							<h1 class="counter">2239</h1>
 							<p>Cups of Coffee Taken</p>
-						</div>	
+						</div>
 						<div class="col single-fact">
 							<h1 class="counter">435</h1>
 							<p>In House Professionals</p>
-						</div>												
+						</div>
 					</div>
-				</div>	
+				</div>
 			</section> -->
 			<!-- end fact Area -->
 
@@ -220,7 +228,7 @@
 								<h4><span class="lnr lnr-license"></span>Professional Service</h4>
 								<p>
 									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
-								</p>								
+								</p>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-6">
@@ -228,7 +236,7 @@
 								<h4><span class="lnr lnr-phone"></span>Great Support</h4>
 								<p>
 									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
-								</p>								
+								</p>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-6">
@@ -236,7 +244,7 @@
 								<h4><span class="lnr lnr-rocket"></span>Technical Skills</h4>
 								<p>
 									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
-								</p>				
+								</p>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-6">
@@ -244,7 +252,7 @@
 								<h4><span class="lnr lnr-diamond"></span>Highly Recomended</h4>
 								<p>
 									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
-								</p>								
+								</p>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-6">
@@ -252,11 +260,11 @@
 								<h4><span class="lnr lnr-bubble"></span>Positive Reviews</h4>
 								<p>
 									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
-								</p>									
+								</p>
 							</div>
-						</div>						
+						</div>
 					</div>
-				</div>	
+				</div>
 			</section> -->
 			<!-- End service Area -->
 <br/>
@@ -271,17 +279,17 @@
 							<h1>Coming Soon
 							</h1>
 							<p>
-                                Our new revolutionized MLM ( Multi Level Marketing ) / Crowdfunding Platform will be joining the family in soon. 
+                                Our new revolutionized MLM ( Multi Level Marketing ) / Crowdfunding Platform will be joining the family in soon.
                                 <br/>
                                 Launch date will be Announced.
 							</p>
 							<a class="btn primary-btn mt-20 text-uppercase" href="https://www.youtube.com/channel/UCtsKXK9lC6ShePjyh82aOkA">Subscribe To Us <i class="fa fa-youtube fa-2x fa-fw"></i><span class="lnr lnr-arrow-right"></a>
-						</div>						
+						</div>
 					</div>
-				</div>	
+				</div>
 			</section>
-			<!-- End info Area -->			
-			
+			<!-- End info Area -->
+
 
 			<!-- Start brand Area -->
 			<!-- <section class="brand-area">
@@ -302,12 +310,12 @@
 							<a class="col single-img" href="#">
 								<img class="d-block mx-auto" src="img/l5.png" alt="">
 							</a>
-					</div>	
-				</div>	
+					</div>
+				</div>
 			</section> -->
-			<!-- End brand Area -->	
+			<!-- End brand Area -->
 
-			<!-- start contact Area -->		
+			<!-- start contact Area -->
 			<section class="contact-area section-gap" id="contact">
 				<div class="container">
 					<div class="row d-flex justify-content-center">
@@ -317,12 +325,12 @@
 								<p>We will love to hear from you.</p>
 							</div>
 						</div>
-					</div>										
+					</div>
 					<form class="form-area mt-60" id="myForm" action="mail.php" method="post" class="contact-form text-right">
-						<div class="row">	
+						<div class="row">
 						<div class="col-lg-6 form-group">
 							<input name="name" placeholder="Enter your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control" required="" type="text">
-						
+
 							<input name="email" placeholder="Enter email address" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" class="common-input mb-20 form-control" required="" type="email">
 
 							<input name="subject" placeholder="Enter your subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your subject'" class="common-input mb-20 form-control" required="" type="text">
@@ -330,13 +338,13 @@
 						<div class="col-lg-6 form-group">
 							<textarea class="common-textarea mt-10 form-control" name="message" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
 							<a class="btn primary-btn mt-20" href="mailto:info@ourcomunity.net"> Send Message<span class="lnr lnr-arrow-right"></span></a>
-							<div class="mt-10 alert-msg">								
+							<div class="mt-10 alert-msg">
 						</div>
 						</div></div>
-					</form>						
-					
-				</div>	
+					</form>
+
+				</div>
 			</section>
-			<!-- end contact Area -->	
-		
-			<!-- start footer Area -->		
+			<!-- end contact Area -->
+
+			<!-- start footer Area -->

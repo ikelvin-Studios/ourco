@@ -29,7 +29,7 @@
                   <a href="#">Privacy Policy</a>
                 </li>
               </ul>
-              <p class="text-muted small mb-4 mb-lg-0">&copy; ourcomunity.net 2018. All Rights Reserved. 
+              <p class="text-muted small mb-4 mb-lg-0">&copy; ourcomunity.net 2018 - 2020. All Rights Reserved. 
 				  <!-- Proudly Developed by <a href="tel:+233551838987" >ikelvin Studios</a> -->
 				</p>
             </div>
@@ -55,4 +55,3 @@
           </div>
         </div>
       </footer>
-      
