@@ -14,12 +14,12 @@ $base_url = "http://localhost/ourco";
 if($_SESSION){
 $userid =  $_SESSION['userid'];
 $superpass_id = $_SESSION['id'];
-echo $userid;
+// echo $userid;
 $poweruser = DB::fetch("SELECT * FROM `users_tb` WHERE `id`='$userid'")[0];
 $powerwallet = DB::fetch("SELECT * FROM `wallet` WHERE `user_id`='$userid'")[0];
 $powerwalletInfo = DB::fetch("SELECT * FROM `payment_acc_tb` WHERE `user_id`='$userid'")[0];
-print_r($poweruser[0]);
-echo '<script>alert("Hey '.$poweruser.' ")</script>';
+// print_r($poweruser[0]);
+// echo '<script>alert("Hey '.$poweruser.' ")</script>';
 $user_currency_symbol='$';
 
 // $poweruser = DB::fetch("SELECT * FROM `users_tb` WHERE `id`='$userid'")[0];
