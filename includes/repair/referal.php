@@ -9,18 +9,22 @@ require ('../classes/function.php');
 // DB::query($query)
 // DB::fetch("SELECT `username` FROM `users_tb` WHERE `username`='$ffid'")[0];
 //$referer = DB::fetch("SELECT `id` FROM `users_tb` WHERE `username`='$refname'")[0]['id'];
-$a = 935;
-// Referal_tb Done $query = "UPDATE `referal_tb` SET `id`=`referee` WHERE `referee` = '$a'";
-// wallet Done $query = "UPDATE `wallet` SET `dir`=`user_id` WHERE `user_id` = '$a'";
-// status_tb Done $query = "UPDATE `status_tb` SET `id`=`user_id` WHERE `user_id` = '$a'";
-// Payment_acc_tb Done $query = "UPDATE `payment_acc_tb` SET `dir`=`user_id` WHERE `user_id` = '$a'";
-// nok_tb Done $query = "UPDATE `nok_tb` SET `id`=`user_id` WHERE `user_id` = '$a'";
-// login_tb Done $query = "UPDATE `login_tb` SET `id`=`user_id` WHERE `user_id` = '$a'";
-while ($a > 0) {
-  $query = "UPDATE `login_tb` SET `id`=`user_id` WHERE `user_id` = '$a'";
+// $a = 935;
+$a = 1;
+
+while ($a < 936) {
+  $refName = DB::fetch("SELECT `referer` FROM `user` WHERE `id`='$a'")[0][0];
+  // print_r(DB::count("SELECT `id` FROM `user` WHERE `username`='$refName'"));
+  if (DB::count("SELECT `id` FROM `user` WHERE `username`='$refName'") > 0) {
+    $refId = DB::fetch("SELECT `id` FROM `user` WHERE `username`='$refName'")[0][0];
+    print_r($refId);
+  } else {
+    $refId = 441;
+  }
+  $query = "UPDATE `referal_tb` SET `referer`='$refId' WHERE `referee` = '$a'";
   // code...
   DB::query($query);
-  $a--;
+  $a++;
 }
 echo 'Done';
 

@@ -17,7 +17,7 @@ $a = 935;
 // nok_tb Done $query = "UPDATE `nok_tb` SET `id`=`user_id` WHERE `user_id` = '$a'";
 // login_tb Done $query = "UPDATE `login_tb` SET `id`=`user_id` WHERE `user_id` = '$a'";
 while ($a > 0) {
-  $query = "UPDATE `login_tb` SET `id`=`user_id` WHERE `user_id` = '$a'";
+  $query = "UPDATE `settlement_tb` SET `dir`=`user_id` WHERE `user_id` = '$a'";
   // code...
   DB::query($query);
   $a--;
