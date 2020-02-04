@@ -28,6 +28,8 @@ while ($a < 936) {
   DB::query($query);
   $a++;
 }
+// TODO: Sum Investments and Co.
+
 echo 'Done';
 
 ?>
