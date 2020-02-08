@@ -1,11 +1,14 @@
-<?php 
+<?php
 
 
 // $requests_no = DB::count("SELECT * FROM `requests_tb` WHERE `from_id` = '$userid' AND `status` = 'issued' OR `to_id` = '$userid' AND `status` = 'confirmed'");
 // if ($requests_no > 0) {
 // $requests_tb = DB::fetch("SELECT * FROM `requests_tb` WHERE `from_id` = '$userid' AND `status` = 'issued' OR `to_id` = '$userid' AND `status` = 'confirmed'");
 // }
+$settlement = DB::fetch("SELECT * FROM `settlement_tb` WHERE `user_id`='$userid'")[0];
+$referals = DB::fetch("SELECT * FROM `referal_tb` WHERE `referee`='$userid' OR `referer`='$userid'");
 
+print_r($referals);
 ?>
 
 <?php
