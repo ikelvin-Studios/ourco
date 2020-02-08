@@ -8,7 +8,7 @@
 
 // $user_info = data::users_tb()[0];
 
-//require ('../includes/models/dashboard.php');
+require ('../includes/models/dashboard.php');
 ?>
 
 
@@ -17,13 +17,15 @@
             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
             <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
           </div>
+<?php if($powerstatus['badge'] == '2019') {
 
-<div class="row">
+  ?>
+          <div class="row">
                 <div class="col-lg-3 mb-4">
                   <div class="card bg-primary text-white shadow">
                     <div class="card-body">
                       2019 Investment
-                      <div class="text-white-50 small"><i class="fas fa-database fa-sm fa-fw"></i>200 Balance</div>
+                      <div class="text-white-50 small"><i class="fas fa-database fa-sm fa-fw"></i><?= $settlement['investment']?> Balance</div>
                     </div>
                   </div>
                 </div>
@@ -31,7 +33,7 @@
                   <div class="card bg-success text-white shadow">
                     <div class="card-body">
                       2019 Profit
-                      <div class="text-white-50 small"><i class="fas fa-database fa-sm fa-fw"></i>200 Balance</div>
+                      <div class="text-white-50 small"><i class="fas fa-database fa-sm fa-fw"></i><?= $settlement['profit']?> Balance</div>
                     </div>
                   </div>
                 </div>
@@ -39,7 +41,7 @@
                   <div class="card bg-info text-white shadow">
                     <div class="card-body">
                       2019 Wallet
-                      <div class="text-white-50 small"><i class="fas fa-database fa-sm fa-fw"></i>200 Balance</div>
+                      <div class="text-white-50 small"><i class="fas fa-database fa-sm fa-fw"></i><?= $settlement['wallet_balance']?> Balance</div>
                     </div>
                   </div>
                 </div>
@@ -47,7 +49,7 @@
                   <div class="card bg-warning text-white shadow">
                     <div class="card-body">
                       5% Update Bonus
-                      <div class="text-white-50 small"><i class="fas fa-database fa-sm fa-fw"></i>200 Balance</div>
+                      <div class="text-white-50 small"><i class="fas fa-database fa-sm fa-fw"></i><?= $settlement['bonus']?> Balance</div>
                     </div>
                   </div>
                 </div>
@@ -55,7 +57,7 @@
                   <div class="card bg-danger text-white shadow">
                     <div class="card-body">
                       Token For Corrections
-                      <div class="text-white-50 small"><i class="fas fa-database fa-sm fa-fw"></i>200 Free Settlement</div>
+                      <div class="text-white-50 small"><i class="fas fa-database fa-sm fa-fw"></i><?= $settlement['token']?> Free Settlement</div>
                     </div>
                   </div>
                 </div>
@@ -63,7 +65,7 @@
                   <div class="card bg-secondary text-white shadow">
                     <div class="card-body">
                       2020 Profit Growth-Cut
-                      <div class="text-white-50 small"><i class="fas fa-database fa-sm fa-fw"></i>200 <span class="text-danger large bg-warning pl-2 pr-2"> On Dec 31, 2019</span></div>
+                      <div class="text-white-50 small"><i class="fas fa-database fa-sm fa-fw"></i><?= $settlement['profit_cut']?> <span class="text-danger large bg-warning pl-2 pr-2"> On Dec 31, 2019</span></div>
                     </div>
                   </div>
                 </div>
@@ -72,7 +74,7 @@
                   <div class="row">
                     <div class="card-body col-lg-6">
                       Total: <i class="fas fa-database fa-sm fa-fw"></i>200 Cashout as ->
-                      <div class="text-primary-50 small"><i class="fas fa-database fa-sm fa-fw"></i>200 to Reserved + <i class="fas fa-database fa-sm fa-fw"></i>200 to Bonus</div>
+                      <div class="text-primary-50 small"><i class="fas fa-database fa-sm fa-fw"></i><?= $settlement['investment'] + $settlement['wallet_balance'] + $settlement['profit'] + $settlement['profit_cut'] + $settlement['token']?> to Reserved + <i class="fas fa-database fa-sm fa-fw"></i><?= $settlement['bonus']?> to Bonus</div>
                     </div>
                     <a href="#" class="card-body bg-primary text-white col-lg-6">
                       Cashout <i class="fas fa-wallet fa-fw"></i>
@@ -81,9 +83,9 @@
                   </div>
                   </div>
                 </div>
-              </div>
+          </div>
+<?php }?>
 
-              
           <!-- Content Row -->
           <div class="row">
 
@@ -189,10 +191,10 @@
             <!-- Area Chart -->
             <div class="col-xl-8 col-lg-7">
 
-            
+
               <div class="card shadow">
               <!-- <div class="card shadow mb-4"> -->
-                
+
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Activity Log</h6>
@@ -344,7 +346,7 @@
 
                           <h3 class="timeline-header"><a href="#">Support Team</a> sent you an email</h3>
 
-                         
+
                         </div>
                       </div>
                       <!-- END timeline item -->
@@ -369,12 +371,12 @@
 
                           <h3 class="timeline-header"><a href="#">Jay White</a> commented on your post</h3>
 
-                         
+
                         </div>
                       </div>
                       <!-- END timeline item -->
                       <!-- timeline time label -->
-                     
+
                       <!-- /.timeline-label -->
                       <!-- timeline item -->
                       <div>
@@ -385,7 +387,7 @@
 
                           <h3 class="timeline-header"><a href="#">Mina Lee</a> uploaded new photos</h3>
 
-                         
+
                         </div>
                       </div>
                       <!-- END timeline item -->
@@ -398,7 +400,7 @@
 
                           <h3 class="timeline-header"><a href="#">Mina Lee</a> uploaded new photos</h3>
 
-                         
+
                         </div>
                       </div>
                       <!-- END timeline item -->
@@ -411,7 +413,7 @@
 
                           <h3 class="timeline-header"><a href="#">Mina Lee</a> uploaded new photos</h3>
 
-                         
+
                         </div>
                       </div>
                       <!-- END timeline item -->
@@ -419,7 +421,7 @@
                         <i class="far fa-clock bg-gray"></i>
                       </div>
                     </div>
-               
+
                   <!-- <div class="chart-area">
                     <canvas id="myAreaChart"></canvas>
                   </div> -->
@@ -432,7 +434,7 @@
 
             </div>
 
-            
+
             <!-- Pie Chart -->
             <div class="col-xl-4 col-lg-5">
               <div class="card shadow mb-4">
@@ -458,7 +460,7 @@
                 </style>
 
                 <div class="main-card mb-3 card">
-                
+
                                     <div class="card-body">
                                     <div class="rows">
         <div class="col-md-12">
@@ -467,32 +469,88 @@
             <input id="reflink" type="text" class="form-control "  value="<?= site::fp_retain($base_url); ?>/ref/<?= site::fp_retain($poweruser['username']); ?>"/><a class="input-group-addon btn btn-primary text-white" data-clipboard-action="copy" data-clipboard-target="#reflink">Copy Link</a>
 
     <!-- Done with ref link -->
-            
+
         </div></div><h5 class="card-title">My Community</h5>
                                         <div class="scroll-area-sm">
-                                            <div class="scrollbar-container ps--active-y"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sodales ullamcorper vehicula. Duis placerat quam porta lorem lobortis, sit amet sodales mauris
-                                                finibus. Donec posuere diam at volutpat viverra. Cras fringilla auctor augue sed congue. Maecenas mollis quis enim quis egestas. In sollicitudin mi a pretium varius. Integer eleifend sodales pharetra. Nullam vitae
-                                                libero sem. Nulla et eros congue, tincidunt ante eu, tincidunt eros. Donec nisl purus, convallis a hendrerit ut, eleifend in lectus. Proin luctus dignissim lacus, in laoreet arcu eleifend non. Quisque viverra ipsum
-                                                a massa porta convallis. Donec tincidunt imperdiet purus, interdum elementum ante commodo a. Quisque pharetra arcu sapien, vel ornare magna sollicitudin quis.</p>
-                                                <p>Nunc congue magna eget eros blandit, eu viverra magna semper. Nullam in diam a metus dictum consequat. Quisque ultricies, ipsum non euismod semper, velit felis lacinia nibh, et finibus quam leo vitae nisi.
-                                                    Maecenas interdum diam quis risus bibendum, eu fermentum est pharetra. In dictum at enim pretium bibendum. Praesent efficitur iaculis dolor in sodales. Morbi maximus in ipsum in malesuada. Proin semper lacus
-                                                    tempor magna aliquam, sed aliquam dui scelerisque. Donec nisi nulla, rhoncus a tristique eget, ultrices vitae dolor. Ut id urna vitae ante tincidunt pharetra at non metus. Nunc in suscipit nulla. Sed vitae leo
-                                                    vulputate, euismod tortor vel, aliquet velit. Curabitur eget tincidunt elit. Nam et ligula finibus, eleifend velit et, commodo quam. Praesent non libero velit.</p>
-                                                <p>Nunc congue magna eget eros blandit, eu viverra magna semper. Nullam in diam a metus dictum consequat. Quisque ultricies, ipsum non euismod semper, velit felis lacinia nibh, et finibus quam leo vitae nisi.
-                                                    Maecenas interdum diam quis risus bibendum, eu fermentum est pharetra. In dictum at enim pretium bibendum. Praesent efficitur iaculis dolor in sodales. Morbi maximus in ipsum in malesuada. Proin semper lacus
-                                                    tempor magna aliquam, sed aliquam dui scelerisque. Donec nisi nulla, rhoncus a tristique eget, ultrices vitae dolor. Ut id urna vitae ante tincidunt pharetra at non metus. Nunc in suscipit nulla. Sed vitae leo
-                                                    vulputate, euismod tortor vel, aliquet velit. Curabitur eget tincidunt elit. Nam et ligula finibus, eleifend velit et, commodo quam. Praesent non libero velit.</p>
-                                                <p>Nunc congue magna eget eros blandit, eu viverra magna semper. Nullam in diam a metus dictum consequat. Quisque ultricies, ipsum non euismod semper, velit felis lacinia nibh, et finibus quam leo vitae nisi.
-                                                    Maecenas interdum diam quis risus bibendum, eu fermentum est pharetra. In dictum at enim pretium bibendum. Praesent efficitur iaculis dolor in sodales. Morbi maximus in ipsum in malesuada. Proin semper lacus
-                                                    tempor magna aliquam, sed aliquam dui scelerisque. Donec nisi nulla, rhoncus a tristique eget, ultrices vitae dolor. Ut id urna vitae ante tincidunt pharetra at non metus. Nunc in suscipit nulla. Sed vitae leo
-                                                    vulputate, euismod tortor vel, aliquet velit. Curabitur eget tincidunt elit. Nam et ligula finibus, eleifend velit et, commodo quam. Praesent non libero velit.</p>
+                                            <div class="scrollbar-container ps--active-y"><table id="" class="table table-bordered table-hover table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>username</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                $i=1;
+                                                    if(1){
+                                                        while($i<count($referals)){
+                                                            $row = $referals[$i];
+                                                            print_r($referals);
+                                                            $referer = $row['referer'];
+                                                            $referee = $row['referee'];
+                                                            // $refUserID = ($referer ==  $userid) ? $referee : $referer;
+
+
+                                                            $refUserName = DB:query("SELECT `username` FROM `users_tb` WHERE `id`='$refUserID' ")
+                                                            $status = $row['status'];
+                                                            ?>
+                                                            <tr>
+                                                                <td><?= $i ?></td>
+                                                                <td>
+                                                                    <?php if ($status == "ready") {
+                                                                    ?>
+                                                                    <span class="fa fa-fw fa-circle text-success"></span>
+                                        <?php } elseif ($status == "settled") {
+                                        ?>
+                                        <span class="fa fa-fw fa-circle text-primary"></span>
+
+                                      <?php } elseif ($status == "unsettled") {
+                                        ?><span class="fa fa-fw fa-circle"></span>
+
+                                        <?php } elseif ($status == "banned") {
+                                        ?><span class="fa fa-fw fa-circle text-danger"></span>
+                                        <?php }
+                                        ?>
+
+                                        <?= $refUserName ?>
+
+
+                                        <?php
+                                        //$ref_settle = "done";
+                                        if ($status == "settled") {
+                                         ?>
+                                         <span class="fa fa-fw fa-check text-success"></span>
+                                          <?php }
+                                        ?>
+                                     </td>
+
+                                                                <td><?= $status ?></td>
+
+                                                            </tr><?php
+
+                                                            $i++;
+                                                        }
+
+                                                    }
+                                                    else{
+                                                       echo '
+                                                        <tr>
+                                                            <td colspan="3">You have no referals yet</td>
+                                                        </tr> ';
+
+
+
+                                                    }
+                                                ?>
+                                            </table>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
                 <div class="card-body">
-                 
+
                   <div class="mt-4 text-center small">
                     <span class="mr-2">
                       <i class="fas fa-circle text-primary"></i> Direct
