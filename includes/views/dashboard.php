@@ -337,86 +337,29 @@ require ('../includes/models/dashboard.php');
                         </span>
                       </div>
                       <!-- /.timeline-label -->
-                      <!-- timeline item -->
-                      <div>
-                        <i class="fas fa-envelope bg-primary"></i>
-
-                        <div class="timeline-item">
-                          <span class="time"><i class="far fa-clock"></i> 12:05</span>
-
-                          <h3 class="timeline-header"><a href="#">Support Team</a> sent you an email</h3>
-
-
-                        </div>
-                      </div>
-                      <!-- END timeline item -->
-                      <!-- timeline item -->
-                      <div>
-                        <i class="fas fa-user bg-info"></i>
-
-                        <div class="timeline-item">
-                          <span class="time"><i class="far fa-clock"></i> 5 mins ago</span>
-
-                          <h3 class="timeline-header border-0"><a href="#">Sarah Young</a> accepted your friend request
-                          </h3>
-                        </div>
-                      </div>
-                      <!-- END timeline item -->
-                      <!-- timeline item -->
-                      <div>
-                        <i class="fas fa-comments bg-warning"></i>
-
-                        <div class="timeline-item">
-                          <span class="time"><i class="far fa-clock"></i> 27 mins ago</span>
-
-                          <h3 class="timeline-header"><a href="#">Jay White</a> commented on your post</h3>
-
-
-                        </div>
-                      </div>
-                      <!-- END timeline item -->
-                      <!-- timeline time label -->
-
-                      <!-- /.timeline-label -->
-                      <!-- timeline item -->
-                      <div>
-                        <i class="fas fa-camera bg-purple"></i>
-
-                        <div class="timeline-item">
-                          <span class="time"><i class="far fa-clock"></i> 2 days ago</span>
-
-                          <h3 class="timeline-header"><a href="#">Mina Lee</a> uploaded new photos</h3>
-
-
-                        </div>
-                      </div>
-                      <!-- END timeline item -->
+                      <?php
+                      $i = 0;
+foreach($dbUserActs as $uacts) {
+$act_details = $uacts['activity'];
+$act_time = $uacts['act_time'];
+if($i>4){
+  break;
+}
+  ?>
                        <!-- timeline item -->
                        <div>
-                        <i class="fas fa-camera bg-purple"></i>
-
+                        <i class="fas fa-camera bg-default"></i>
                         <div class="timeline-item">
-                          <span class="time"><i class="far fa-clock"></i> 2 days ago</span>
 
-                          <h3 class="timeline-header"><a href="#">Mina Lee</a> uploaded new photos</h3>
-
+                          <h3 class="timeline-header"><a href="#">You</a> <?= $act_details ?>
+                          <span class="time"><i class="far fa-clock"></i> <?= $act_time ?></span></h3>
 
                         </div>
                       </div>
                       <!-- END timeline item -->
-                       <!-- timeline item -->
-                       <div>
-                        <i class="fas fa-camera bg-purple"></i>
-
-                        <div class="timeline-item">
-                          <span class="time"><i class="far fa-clock"></i> 2 days ago</span>
-
-                          <h3 class="timeline-header"><a href="#">Mina Lee</a> uploaded new photos</h3>
-
-
-                        </div>
-                      </div>
-                      <!-- END timeline item -->
+<?php
+$i++;
+ } ?>
                       <div>
                         <i class="far fa-clock bg-gray"></i>
                       </div>
@@ -484,16 +427,13 @@ require ('../includes/models/dashboard.php');
                                                 <?php
                                                 $i=1;
                                                     if(1){
-                                                        while($i<count($referals)){
-                                                            $row = $referals[$i];
-                                                            print_r($referals);
-                                                            $referer = $row['referer'];
-                                                            $referee = $row['referee'];
-                                                            // $refUserID = ($referer ==  $userid) ? $referee : $referer;
+                                                        foreach($dbreferals as $refs) {
 
-
-                                                            $refUserName = DB:query("SELECT `username` FROM `users_tb` WHERE `id`='$refUserID' ")
-                                                            $status = $row['status'];
+                                                            //print_r($refs);
+                                                            $referer = $refs['referer'];
+                                                            $referee = $refs['referee'];
+                                                            $refUserName = $refs['username'];
+                                                            $status = $refs['status'];
                                                             ?>
                                                             <tr>
                                                                 <td><?= $i ?></td>
