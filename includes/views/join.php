@@ -58,7 +58,7 @@ All money invested by clients of ourcomunity.net is insured.
               <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address" name="email">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="Username" name="userNames">
+              <input type="text" class="form-control form-control-user" id="exampleInputUname" placeholder="Username" name="userNames">
             </div>
             <div class="form-group row">
               <div class="col-sm-6 mb-3 mb-sm-0">
@@ -71,10 +71,10 @@ All money invested by clients of ourcomunity.net is insured.
 
             <div class="form-group row">
               <div class="col-sm-6 mb-3 mb-sm-0">
-                <input type="text" class="form-control form-control-user" id="exampleInputPhone" placeholder="Phone" name="phone">
+                <input  id="phone" type="tel" class="form-control" name="phone">
               </div>
               <div class="col-sm-6">
-                <input type="text" class="form-control form-control-user" id="exampleRepeatCountry" placeholder="Country" name="country">
+                <select class="form-control" id="address-country" name="country"></select>
               </div>
             </div> 
             <div class="form-group">
