@@ -11,23 +11,23 @@ require ('../includes/models/register.php');
                                             <h4 class="modal-title" id="myModalLabel">Terms And Conditions</h4>
                                         </div>
                                         <div class="modal-body">
-                                            Area of high profit investments always implies having certain risks involved. 
+                                            Area of high profit investments always implies having certain risks involved.
 However, ourcomunity.net has developed a uniquemulti-level insuring system where 7% of all deposited funds are transferred to few large insurance companies. This amount is deducted automatically from our profits and does not affect profits of our investors. The only type of risk that should be taken into account is force majeure that is not linked with brokers' activity, namely natural disasters (flood, fire, hurricane etc.). Users involved in harmful activity against  ourcomunity.net can get their accounts blocked with no prior notification. Invested money is to be returned to their owners with exception of charges for compensation of damage caused to ourcomunuty.net. Account blockage is a rare situation and it is a radical measure used in exceptional cases.
 
 All money invested by clients of ourcomunity.net is insured.
-                                            <br/>                                                       
-                                            
+                                            <br/>
+
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                            
-                                        
+
+
                                         </div>
                                     </div>
                                     <!-- /.modal-content -->
-                                 </div> 
+                                 </div>
                                 <!-- /.modal-dialog -->
-                             </div> 
+                             </div>
 
 
 
@@ -45,13 +45,13 @@ All money invested by clients of ourcomunity.net is insured.
             <p class="text-center">Fill all Feild Before clicking SignUp</p>
             <hr class="clean">
           </div>
-          <form class="user" method="post" class="validator-form" action="#create">
+          <form class="user" method="get" class="validator-form" action="#create">
             <div class="form-group row">
               <div class="col-sm-6 mb-3 mb-sm-0">
                 <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="First Name" name="firstNames">
               </div>
               <div class="col-sm-6">
-                <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Last Name" name="lastNames">
+                <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Last Names" name="lastNames">
               </div>
             </div>
             <div class="form-group">
@@ -67,7 +67,7 @@ All money invested by clients of ourcomunity.net is insured.
               <div class="col-sm-6">
                 <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repeat Password" name="password2">
               </div>
-            </div> 
+            </div>
 
             <div class="form-group row">
               <div class="col-sm-6 mb-3 mb-sm-0">
@@ -76,7 +76,7 @@ All money invested by clients of ourcomunity.net is insured.
               <div class="col-sm-6">
                 <select class="form-control" id="address-country" name="country"></select>
               </div>
-            </div> 
+            </div>
             <div class="form-group">
               <input type="text" class="form-control form-control-user" id="exampleInputreferer" placeholder="Referer`s ID" name="ref">
             </div>
@@ -86,15 +86,15 @@ All money invested by clients of ourcomunity.net is insured.
             <div class="form-group">
                                      <label class="cr-styled">
                                     <input type="checkbox" required>
-                                   
+
                                 </label>
-                                I have read and I agree with all <a class="" data-toggle="modal" data-target="#PrivillagesModal"> <i class="fa fa-link"></i> 
+                                I have read and I agree with all <a class="" data-toggle="modal" data-target="#PrivillagesModal"> <i class="fa fa-link"></i>
                                 Terms &amp; Conditions</a>
                                 </div>
 
-                               
-                           
-                              
+
+
+
                             <hr class="dotted">
 
             <input type="submit" class="btn btn-primary btn-user btn-block" value="Register Account" name="signup"/>
