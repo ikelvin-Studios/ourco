@@ -9,3 +9,11 @@
 
   <!-- Custom scripts for all pages-->
   <script src="static/js/sb-admin-2.min.js"></script>
+
+  <script src="static/vendor/tel-input/js/intlTelInput.js?1575016932390"></script>
+  <script src="static/vendor/tel-input/js/utils.js?1575016932390"></script>
+  <!-- <script src="static/vendor/tel-input/js/intlTelInput.min.js?1575016932390"></script> -->
+  <script src="static/vendor/tel-input/js/defaultCountryIp.js?1575016932390"></script>
+  <script src="static/vendor/tel-input/js/countrySync.js?1575016932390"></script>
+
+

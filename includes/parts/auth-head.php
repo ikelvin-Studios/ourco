@@ -14,5 +14,7 @@
 
   <!-- Custom styles for this template-->
   <link href="static/css/sb-admin-2.min.css" rel="stylesheet">
+  <!-- <link href="static/vendor/tel-input/css/intlTelInput.min.css" rel="stylesheet"> -->
+  <link href="static/vendor/tel-input/css/intlTelInput.css?1575016932390" rel="stylesheet">
 
 </head>
