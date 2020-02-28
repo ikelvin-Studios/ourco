@@ -26,6 +26,7 @@
         $upass2 = site::fp_hash($_POST['password2']);
         $ucountry	= site::fp_clear($_POST['country']);
         $promoCode = site::fp_clear($_POST['promo']);
+        $ubonus = 0;
 
         //$uwhatsapp = site::fp_clear($_POST['whatsapp']);
 
@@ -50,7 +51,8 @@
         }
 
         if($refname !=""){
-            $referer = DB::fetch("SELECT `id` FROM `users_tb` WHERE `username`='$refname'")[0]['id'];
+          // TODO: check before fetching
+            $referer = DB::fetch("SELECT `id` FROM `users_tb` WHERE `username`='$refname'")['id'];
         }
         else {
             $referer = 441;
@@ -80,7 +82,7 @@
         if($upass != $upass2){
         $error .='<li>Password do not Match!</li>';
         }
-        if(mb_strlen($_POST['phone']) > 10 || mb_strlen($_POST['phone']) < 9){
+        if(mb_strlen($_POST['phone']) > 15 || mb_strlen($_POST['phone']) < 9){
             $error .='<li>Enter Your Correct Phone Number</li>';
         }
         // if(mb_strlen($_POST['whatsapp']) > 10 || mb_strlen($_POST['whatsapp']) < 9){
@@ -89,30 +91,30 @@
        // echo '<script>alert("ohey '.$error.'");</script>';
         if(empty($error)){
            // echo '<script>alert("ehey");</script>';
-            DB::query("INSERT INTO `users_tb` (`email`,`username`,`firstname`,`surname`,`whatsapp`) VALUES('$uemail','$uname','$fname','$lname','$uwhatsapp')") or die(mysqli_error($pdo));
+            DB::query("INSERT INTO `users_tb` (`email`,`username`,`name`,`mobile`,`country`,`reg_date`) VALUES('$uemail','$uname','$ufullname','$uphone','$ucountry','$rgd')") or die(mysqli_error($pdo));
 
             $u_id = DB::fetch("SELECT `id` FROM `users_tb` WHERE `username`='$uname'")[0]['id'];
 
-            DB::query("INSERT INTO `login_tb` (`phone`,`username`,`password`, `user_id`) VALUES('$uphone','$uname','$upass', '$u_id')") or die(mysqli_error($pdo));
-
-            $r_state = DB::query("SELECT * FROM `referal_tb` WHERE `referee` = '$referer' AND `referal_tb`.`status` = 'settled'");
-            if($r_state->rowCount()){
-                $rp_state = DB::query("SELECT * FROM `ref_points_tb` WHERE `ref_points_tb`.`user_id` = '$referer' AND `ref_points_tb`.`points` > 0");
-                if($rp_state->rowCount()){
-                    DB::query("UPDATE `ref_points_tb` SET `points` = `points`-1 WHERE `ref_points_tb`.`user_id` = '$referer';");
-
-                } else {
-                    $referer = 1;
-                }
-            } else {
-                $referer = 1;
-            }
-
+            DB::query("INSERT INTO `login_tb` (`username`,`password`, `user_id`) VALUES('$uname','$upass','$u_id')") or die(mysqli_error($pdo));
 
             DB::query("INSERT INTO `referal_tb` (`referer`, `referee`) VALUES ('$referer', '$u_id');");
-            DB::query("INSERT INTO `user_paymethod_tb` (`method_id`, `acc_type`, `user_id`, `reg_name`, `reg_number` ) VALUES ('$upay_type', '$uacc_type', '$u_id', '$ureg_name', '$ureg_num');");
-            DB::query("INSERT INTO `ref_points_tb` (`user_id`) VALUES ('$u_id');");
-            DB::query("INSERT INTO `boom_ponits` (`user_id`) VALUES ('$u_id');");
+            // TODO: wallet
+            DB::query("INSERT INTO `wallet` (`user_id`,`bonus`) VALUES ('$u_id','$ubonus');");
+
+            // TODO: payment_acc_tb
+            DB::query("INSERT INTO `payment_acc_tb` (`user_id`) VALUES ('$u_id');");
+
+            // TODO: status_tb
+            DB::query("INSERT INTO `status_tb` (`user_id`,`is_setup`) VALUES ('$u_id','1');");
+
+            // TODO: timeline_tb
+            DB::query("INSERT INTO `timeline_tb` (`user_id`,`activity`,`act_type`) VALUES ('$u_id','Account Registered','acc');");
+
+            // TODO: nok
+            DB::query("INSERT INTO `nok_tb` (`user_id`) VALUES ('$u_id');");
+
+            // DB::query("INSERT INTO `user_paymethod_tb` (`method_id`, `acc_type`, `user_id`, `reg_name`, `reg_number` ) VALUES ('$upay_type', '$uacc_type', '$u_id', '$ureg_name', '$ureg_num');");
+            //
 
 
             if(1){
