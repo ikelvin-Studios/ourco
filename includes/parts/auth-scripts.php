@@ -15,5 +15,5 @@
   <!-- <script src="static/vendor/tel-input/js/intlTelInput.min.js?1575016932390"></script> -->
   <script src="static/vendor/tel-input/js/defaultCountryIp.js?1575016932390"></script>
   <script src="static/vendor/tel-input/js/countrySync.js?1575016932390"></script>
-
-
+  <script src="static/vendor/tel-input/js/isValidNumber.js?1575016932390"></script>
+  <script src="static/vendor/tel-input/js/hiddenInput.js?1575016932390"></script>
