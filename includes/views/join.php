@@ -3,7 +3,7 @@ require ('../includes/models/register.php');
 ?>
 
 
- <div class="modal fade" id="PrivillagesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="PrivillagesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -11,17 +11,15 @@ require ('../includes/models/register.php');
                                             <h4 class="modal-title" id="myModalLabel">Terms And Conditions</h4>
                                         </div>
                                         <div class="modal-body">
-                                            Area of high profit investments always implies having certain risks involved.
-However, ourcomunity.net has developed a uniquemulti-level insuring system where 7% of all deposited funds are transferred to few large insurance companies. This amount is deducted automatically from our profits and does not affect profits of our investors. The only type of risk that should be taken into account is force majeure that is not linked with brokers' activity, namely natural disasters (flood, fire, hurricane etc.). Users involved in harmful activity against  ourcomunity.net can get their accounts blocked with no prior notification. Invested money is to be returned to their owners with exception of charges for compensation of damage caused to ourcomunuty.net. Account blockage is a rare situation and it is a radical measure used in exceptional cases.
+                                          Area of high profit investments always implies having certain risks involved.
+                                          However, ourcomunity.net has developed a uniquemulti-level insuring system where 7% of all deposited funds are transferred to few large insurance companies. This amount is deducted automatically from our profits and does not affect profits of our investors. The only type of risk that should be taken into account is force majeure that is not linked with brokers' activity, namely natural disasters (flood, fire, hurricane etc.). Users involved in harmful activity against  ourcomunity.net can get their accounts blocked with no prior notification. Invested money is to be returned to their owners with exception of charges for compensation of damage caused to ourcomunuty.net. Account blockage is a rare situation and it is a radical measure used in exceptional cases.
 
-All money invested by clients of ourcomunity.net is insured.
+                                          All money invested by clients of ourcomunity.net is insured.
                                             <br/>
 
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-
                                         </div>
                                     </div>
                                     <!-- /.modal-content -->
@@ -51,7 +49,7 @@ All money invested by clients of ourcomunity.net is insured.
                 <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="First Name" name="firstNames">
               </div>
               <div class="col-sm-6">
-                <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Last Names" name="lastNames">
+                <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Last Name" name="lastNames">
               </div>
             </div>
             <div class="form-group">
@@ -75,6 +73,10 @@ All money invested by clients of ourcomunity.net is insured.
               </div>
               <div class="col-sm-6">
                 <select class="form-control" id="address-country" name="country"></select>
+              </div>
+              <div class="col-sm-12">
+                <span id="valid-msg" class="hide"></span>
+                <span id="error-msg" class="hide"></span>
               </div>
             </div>
             <div class="form-group">
