@@ -43,7 +43,7 @@ require ('../includes/models/register.php');
             <p class="text-center">Fill all Feild Before clicking SignUp</p>
             <hr class="clean">
           </div>
-          <form class="user" method="get" class="validator-form" action="#create">
+          <form class="user" method="post" class="validator-form" action="#create">
             <div class="form-group row">
               <div class="col-sm-6 mb-3 mb-sm-0">
                 <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="First Name" name="firstNames">
