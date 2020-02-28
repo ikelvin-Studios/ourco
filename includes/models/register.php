@@ -52,7 +52,7 @@
 
         if($refname !=""){
           // TODO: check before fetching
-            $referer = DB::fetch("SELECT `id` FROM `users_tb` WHERE `username`='$refname'")['id'];
+            $referer = (DB::query("SELECT `id` FROM `users_tb` WHERE `username`='$refname'")) ? DB::fetch("SELECT `id` FROM `users_tb` WHERE `username`='$refname'")['id'] : 441;
         }
         else {
             $referer = 441;
