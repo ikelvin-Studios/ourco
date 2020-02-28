@@ -1,4 +1,4 @@
-<?php 
+<?php
 
     if(isset($_SESSION['id'])){
         header("location: pages/");
@@ -18,7 +18,7 @@
 
         if(DB::count($query) > 0){
             $user_res = DB::fetch($query)[0];
-            $_SESSION['userid'] = $user_res['id'];
+            $_SESSION['userid'] = $user_res['user_id'];
             $_SESSION['username'] = $user_res['username'];
             $_SESSION['id'] = session_id();
             $login_type = "user";
