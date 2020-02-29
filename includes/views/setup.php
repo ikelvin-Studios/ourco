@@ -3,7 +3,7 @@ require ('../includes/models/setup.php');
 ?>
 
 
- <div class="modal fade" id="PrivillagesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="PrivillagesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -11,23 +11,16 @@ require ('../includes/models/setup.php');
                                             <h4 class="modal-title" id="myModalLabel">Terms And Conditions</h4>
                                         </div>
                                         <div class="modal-body">
-                                            Area of high profit investments always implies having certain risks involved. 
-However, ourcomunity.net has developed a uniquemulti-level insuring system where 7% of all deposited funds are transferred to few large insurance companies. This amount is deducted automatically from our profits and does not affect profits of our investors. The only type of risk that should be taken into account is force majeure that is not linked with brokers' activity, namely natural disasters (flood, fire, hurricane etc.). Users involved in harmful activity against  ourcomunity.net can get their accounts blocked with no prior notification. Invested money is to be returned to their owners with exception of charges for compensation of damage caused to ourcomunuty.net. Account blockage is a rare situation and it is a radical measure used in exceptional cases.
-
-All money invested by clients of ourcomunity.net is insured.
-                                            <br/>                                                       
-                                            
+                                          <?php include ('../includes/views/termsnconditions.html'); ?>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                            
-                                        
                                         </div>
                                     </div>
                                     <!-- /.modal-content -->
-                                 </div> 
+                                 </div>
                                 <!-- /.modal-dialog -->
-                             </div> 
+                             </div>
 
 
 
@@ -41,8 +34,9 @@ All money invested by clients of ourcomunity.net is insured.
       <div class="col-lg-7">
         <div class="p-5">
           <div class="text-center">
-            <h1 class="h4 text-gray-900 mb-4">Almost Done, Now Lets Setup Your Acoount!</h1>
-            <p class="text-center">Fill all Feild Before clicking Done</p>
+            <h1 class="h4 text-gray-900 mb-4">Almost Done, Now Lets Setup Your Acount!</h1>
+            <p class="text-center text-primary">Stage 1/3 Account Setup</p>
+            <p class="text-center">Fill all Feild Before clicking SignUp</p>
             <hr class="clean">
           </div>
           <form class="user" method="post" class="validator-form" action="#create">
@@ -58,7 +52,7 @@ All money invested by clients of ourcomunity.net is insured.
               <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address" name="email">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="Username" name="userNames">
+              <input type="text" class="form-control form-control-user" id="exampleInputUname" placeholder="Username" name="userNames">
             </div>
             <div class="form-group row">
               <div class="col-sm-6 mb-3 mb-sm-0">
@@ -67,16 +61,20 @@ All money invested by clients of ourcomunity.net is insured.
               <div class="col-sm-6">
                 <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repeat Password" name="password2">
               </div>
-            </div> 
+            </div>
 
             <div class="form-group row">
               <div class="col-sm-6 mb-3 mb-sm-0">
-                <input type="text" class="form-control form-control-user" id="exampleInputPhone" placeholder="Phone" name="phone">
+                <input  id="phone" type="tel" class="form-control" name="phone">
               </div>
               <div class="col-sm-6">
-                <input type="text" class="form-control form-control-user" id="exampleRepeatCountry" placeholder="Country" name="country">
+                <select class="form-control" id="address-country" name="country"></select>
               </div>
-            </div> 
+              <div class="col-sm-12">
+                <span id="valid-msg" class="hide"></span>
+                <span id="error-msg" class="hide"></span>
+              </div>
+            </div>
             <div class="form-group">
               <input type="text" class="form-control form-control-user" id="exampleInputreferer" placeholder="Referer`s ID" name="ref">
             </div>
@@ -86,15 +84,15 @@ All money invested by clients of ourcomunity.net is insured.
             <div class="form-group">
                                      <label class="cr-styled">
                                     <input type="checkbox" required>
-                                   
+
                                 </label>
-                                I have read and I agree with all <a class="" data-toggle="modal" data-target="#PrivillagesModal"> <i class="fa fa-link"></i> 
+                                I have read and I agree with all <a class="" data-toggle="modal" data-target="#PrivillagesModal"> <i class="fa fa-link"></i>
                                 Terms &amp; Conditions</a>
                                 </div>
 
-                               
-                           
-                              
+
+
+
                             <hr class="dotted">
 
             <input type="submit" class="btn btn-primary btn-user btn-block" value="Register Account" name="signup"/>
