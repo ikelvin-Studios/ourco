@@ -88,7 +88,7 @@ require ('../includes/models/login.php');
                   </div>
                   <div class="text-center">
                   <p class="text-gray small">Don`t have an Account?
-                    <a class="" href="joining">Create an Account!</a></p>
+                    <a class="" href="join">Create an Account!</a></p>
                   </div>
                 </div>
               </div>
