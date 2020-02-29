@@ -11,12 +11,7 @@ require ('../includes/models/register.php');
                                             <h4 class="modal-title" id="myModalLabel">Terms And Conditions</h4>
                                         </div>
                                         <div class="modal-body">
-                                          Area of high profit investments always implies having certain risks involved.
-                                          However, ourcomunity.net has developed a uniquemulti-level insuring system where 7% of all deposited funds are transferred to few large insurance companies. This amount is deducted automatically from our profits and does not affect profits of our investors. The only type of risk that should be taken into account is force majeure that is not linked with brokers' activity, namely natural disasters (flood, fire, hurricane etc.). Users involved in harmful activity against  ourcomunity.net can get their accounts blocked with no prior notification. Invested money is to be returned to their owners with exception of charges for compensation of damage caused to ourcomunuty.net. Account blockage is a rare situation and it is a radical measure used in exceptional cases.
-
-                                          All money invested by clients of ourcomunity.net is insured.
-                                            <br/>
-
+                                          <?php include ('../includes/views/termsnconditions.html'); ?>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
