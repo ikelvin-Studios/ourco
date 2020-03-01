@@ -1,5 +1,5 @@
 <?php
-require ('../includes/models/register.php');
+//require ('../includes/models/register.php');
 ?>
 
 
