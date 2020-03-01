@@ -1,5 +1,5 @@
 <?php
-require ('../includes/models/login.php');
+//require ('../includes/models/login.php');
 ?>
 <!-- <div class="container">
         <div class="row">
