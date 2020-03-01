@@ -22,11 +22,13 @@ require ('../includes/classes/data.php');
 // echo ':: hey '.$ref;
 
 if (file_exists('../includes/views/'.$viewName.'.php'))
-
-
+  {
+    if (file_exists('../includes/models/'.$viewName.'.php'))
       {
+        require_once("../includes/models/$viewName.php");
+      }
           //include('./includes/model.php');
-           
+
           echo'<!DOCTYPE html>
           <html lang="en">';
           require_once("../includes/parts/".$authpath."head.php");
@@ -37,19 +39,19 @@ if (file_exists('../includes/views/'.$viewName.'.php'))
           require_once("../includes/parts/footer.php");
 
           require_once("../includes/parts/".$authpath."scripts.php");
-          
+
           echo '</body></html>';
           //parts::show("payload");
           //print_r($viewName);
 
-        
+
 
       } else {
         // echo "404 Created!";
       require_once("../includes/views/model404.php");
       die();
 
-      } 
+      }
 
 //parts::show("head");
 
