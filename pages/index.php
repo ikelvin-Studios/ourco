@@ -14,11 +14,15 @@ $viewName = ($viewName == "index") ? "dashboard" : $viewName ;
 if (file_exists('../includes/views/'.$viewName.'.php'))
       {
         site::fp_checkLogin();
-          
-         
+          if ($powerstatus['is_setup']<3) {
+            // code...
+            header('location: ../setup');
+            exit;
+          }
+
           echo'<!DOCTYPE html>
           <html lang="en">';
-          
+
           // self::show("head");
           require_once("../includes/parts/head.php");
           echo '<body id="page-top" onload="init()">
@@ -26,21 +30,21 @@ if (file_exists('../includes/views/'.$viewName.'.php'))
 
           require_once("../includes/parts/sidebar.php");
 
-          echo '<div id="content-wrapper" class="d-flex flex-column"> 
+          echo '<div id="content-wrapper" class="d-flex flex-column">
           <div id="content">';
         // echo '<!-- Navigation -->
         // <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
         //   ';
-          
-          
+
+
           // self::show("header");
           require_once("../includes/parts/header.php");
           // self::show("sidebar");
-          
+
 
           echo'<div class="container-fluid">';
           require_once("../includes/views/$viewName.php");
-         
+
           echo'</div>
           <!-- /.container-fluid -->
              </div>
@@ -63,19 +67,19 @@ if (file_exists('../includes/views/'.$viewName.'.php'))
 
 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#large-modal">Extra large modal</button> -->
 
-                                            <br/>                                                       
-                                            
+                                            <br/>
+
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-check-circle text-primary"></i> Get Started</button>
-                                            
+
                                         </form>
                                         </div>
                                     </div>
                                     <!-- /.modal-content -->
-                                 </div> 
+                                 </div>
                                 <!-- /.modal-dialog -->
-                             </div> 
+                             </div>
 
                              <!-- <h2 class="heading"><i class="fa fa-square"></i> Modals</h2>
 							<button type="button" class="btn btn-default" data-toggle="modal" data-target="#large-modal">Large modal</button>
@@ -91,7 +95,7 @@ if (file_exists('../includes/views/'.$viewName.'.php'))
 										<div class="modal-body center">
                       <div class="row">
                       <div class="col-md-2"><br/><br/><br/>
-                          
+
                         </div>
                         <div class="col-md-6"><br/><br/><br/>
                           <h1 class="heading">Will Be Dropping Soon</h1>
@@ -99,7 +103,7 @@ if (file_exists('../includes/views/'.$viewName.'.php'))
                         <div class="col-md-4">
                           <img class="img img-responsive" src="../static/img/undraw_empty_cart_co35.svg" alt="">
                         </div>
-                        
+
                       </div>
 										</div>
 										<div class="modal-footer">
@@ -110,19 +114,19 @@ if (file_exists('../includes/views/'.$viewName.'.php'))
 								</div>
 							</div>
 
-          <?php 
+          <?php
           //parts::show("sidewidget");
           require_once("../includes/parts/footer.php");
           echo'</div>
           <!-- End of Content Wrapper -->
-      
+
         </div>
         <!-- End of Page Wrapper -->';
           // self::show("footer");
           // self::show("scripts");
 
           ?>
-        
+
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
@@ -150,11 +154,11 @@ if (file_exists('../includes/views/'.$viewName.'.php'))
 
 
           <?php
-         
+
           require_once("../includes/parts/scripts.php");
 
           // if ($refpage_url == "https://boomersclub.net/login" or $refpage_url =="https://beta.boomersclub.net/login" or $refpage_url == "http://localhost/boomers/login")
-            
+
           if (preg_match('/login/',$refpage_url) == 1){
 ?>
 
@@ -163,27 +167,27 @@ if (file_exists('../includes/views/'.$viewName.'.php'))
           $(document).ready(function(){
             // Show the Modal on load
             $("#startupModal").modal("show");
-              
-            // Hide the Modal
-            
-          });
-          </script> 
 
-          
+            // Hide the Modal
+
+          });
+          </script>
+
+
 <?php
 }
 require_once("../includes/models/dashboard-modals.php");
           echo'</body></html>';
           //parts::show("payload");
-       
-        
+
+
 
       } else {
         // echo "404 Created!";
       require_once("../includes/views/model404.php");
       die();
 
-      } 
+      }
 
 //parts::show("head");
 
@@ -318,4 +322,3 @@ console.log("hey");
 		stage.update();
 	}
 </script>
-
