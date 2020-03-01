@@ -1,11 +1,13 @@
 <?php
+error_reporting(E_ALL);
+// error_reporting(0);
 class DB {
         // public static $host;
         // public static $dbName;
         // public static $username;
         // public static $password;
         //ourcomunmmy_boomers
-     
+
         // public static $host = "localhost";
         // public static $dbName = "admin_ourco";
         // public static $username = "admin_admin";
@@ -29,7 +31,7 @@ public static function query($query, $params = array()) {
         $statement = self::connect()->prepare($query);
         $statement->execute($params);
         return $statement;
-        
+
 }
 
 public static function fetch($query, $params = array()) {
@@ -48,7 +50,7 @@ public static function count($query, $params = array()) {
 
         $data = $statement->rowCount();
         return $data;
-       
+
 }
 
 
