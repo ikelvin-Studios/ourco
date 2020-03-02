@@ -3,7 +3,7 @@
     <label class="control-label">Default Currency</label>
     <select name="currency" class="form-control" required>
                <?php
-               echo '<option value="use_default" selected>Ourcoin (DEFAULT) [ or Choose Currency from below] </option>';
+               echo '<option value="ourco" selected>Ourcoin (DEFAULT) [ or Choose Currency from below] </option>';
 
                                foreach($dbCurrency as $row){
                                    $id = $row['dir'];
@@ -25,7 +25,7 @@
   <!-- <div class="form-group">
     <input type="text" class="form-control form-control-user" id="exampleInputreferer" placeholder="Referer`s ID" name="ref">
   </div> -->
-
+<input type="hidden" class="hidden" name="method_id" value="<?=$method_id?>">
  <div class="form-group">
      <div class="row">
          <div class="col-lg-12">
@@ -228,7 +228,7 @@
 
  </div>  <?php } ?>
 
-                        
+
                   <!-- <hr class="dotted">
 
   <input type="submit" class="btn btn-primary btn-user btn-block" value="Register Account" name="signup"/> -->
