@@ -1,5 +1,5 @@
 <?php
-$dbCurrency = DB::query("select * from `currency_tb` order by `currency` asc");
+$dbCurrency = DB::query("SELECT * from `currency_tb` order by `currency` asc");
 
 $page = "0";
 $acc_type = "";
@@ -11,15 +11,16 @@ if(isset($_POST['next_submit'])){
     $bnamepay =  site::fp_clean($_POST['bank']);
     $uid = $userid;
 
-    $query = DB::query("SELECT * from `payment_plans` where `status` = 'enabled' and `plan_name` = '$bnamepay' order by `plan_name` asc");
+    DB::query("UPDATE `payment_acc_tb` SET `currency` = '$def_currency' WHERE `payment_acc_tb`.`user_id`='$userid'");
 
     if(DB::query("SELECT * from `payment_plans` where `status` = 'enabled' and `plan_name` = '$bnamepay'")){
         $row = DB::fetch("SELECT * from `payment_plans` where `status` = 'enabled' and `plan_name` = '$bnamepay'")[0];
+        $method_id = $row['dir'];
         $type = $row['type'];
-		$acc_type = $row['account_type'];
+		    $acc_type = $row['account_type'];
         $def_currency = $row['def_currency'];
         $page = $type;
-		$page_type = $acc_type;
+		    $page_type = $acc_type;
         //echo '<script>alert("hehy '.$page.'")</script>';
 
         $acc_type = "";
@@ -33,6 +34,7 @@ if(isset($_POST['momo_submit'])){
     $bname = site::fp_clean($_POST['bank']);
     $aname = site::fp_clean($_POST['accName']);
     $ano = site::fp_clean($_POST['accNo']);
+    $method_id = site::fp_clean($_POST['method_id']);
     // $pass= site::fp_hash($_POST['password']);
     $uid = $userid;
     // echo "<script>alert('".$bname."')</script>";
@@ -55,11 +57,11 @@ if(isset($_POST['momo_submit'])){
 
     if(empty($error)){
         if(isset($_POST['bank'])){
-            $upd = DB::query("UPDATE `payment_acc_tb` SET `acc_name` = '$aname', `acc_num` = '$ano' WHERE `payment_acc_tb`.`user_id`='$userid'");
+            $upd = DB::query("UPDATE `payment_acc_tb` SET `acc_name` = '$aname', `acc_num` = '$ano', `method`=  '$bname', `plan_id`=  '$method_id' WHERE `payment_acc_tb`.`user_id`='$userid'");
 
             if($upd){
 
-                $updpay = DB::query($con,"UPDATE `user` SET `payment_method`=  '$bname', `payment_ready`= 'yes' WHERE `user`.`username` = '$userid'");
+                $updpay = DB::query("UPDATE `status_tb` SET `is_setup`=  `is_setup`+1, `payment_ready`= 'yes' WHERE `status_tb`.`user_id` = '$userid'");
 
                 if($updpay){
                     echo '<div class="alert alert-success alert-dismissible" role="alert">
@@ -92,6 +94,7 @@ if(isset($_POST['bank_submit'])){
     $bname =  site::fp_clean($_POST['bank']);
     $aname =  site::fp_clean($_POST['accName']);
     $ano =  site::fp_clean($_POST['accNo']);
+    $method_id = site::fp_clean($_POST['method_id']);
     // $pass= site::fp_hash($_POST['password']);
 
     $Bankname =  site::fp_clean($_POST['Bankname']);
@@ -117,16 +120,16 @@ if(isset($_POST['bank_submit'])){
     if(isset($_POST['bank'])){
 
     if ($bname =='Add Your Own Bank') {
-        $sql = "UPDATE `mtn_momo` SET `Account_Name` = '$aname', `Account_Number` = '$ano', `bank` = '$Bankname', `bank_country` = '$bank_country' WHERE `mtn_momo`.`wallet`='$userid'";
+        $sql = "UPDATE `payment_acc_tb` SET `acc_name` = '$aname', `acc_num` = '$ano', `bank` = '$Bankname', `bank_country` = '$bank_country', `method`=  '$bname', `plan_id`=  '$method_id' WHERE `payment_acc_tb`.`user_id`='$userid'";
     } else {
-        $sql = "UPDATE `mtn_momo` SET `Account_Name` = '$aname', `Account_Number` = '$ano' WHERE `mtn_momo`.`wallet`='$userid'";
+        $sql = "UPDATE `payment_acc_tb` SET `acc_name` = '$aname', `acc_num` = '$ano', `method`=  '$bname', `plan_id`=  '$method_id' WHERE `payment_acc_tb`.`user_id`='$userid'";
     }
 
-    $upd = mysqli_query($con,$sql) or die(mysqli_error($con));
+    $upd = DB::query($sql);
 
     if($upd){
 
-        $updpay = mysqli_query($con,"UPDATE `user` SET `payment_method`=  '$bname', `payment_ready`= 'yes' WHERE `user`.`username` = '$userid'") or die(mysqli_error($con));
+        $updpay = DB::query("UPDATE `status_tb` SET `is_setup`=  `is_setup`+1, `payment_ready`= 'yes' WHERE `status_tb`.`user_id` = '$userid'");
 
         if($updpay){
             echo '<div class="alert alert-success alert-dismissible" role="alert">
@@ -161,6 +164,7 @@ if(isset($_POST['email_submit'])){
     $bname =  site::fp_clean($_POST['bank']);
     $aname =  site::fp_clean($_POST['accName']);
     $address =  site::fp_clean($_POST['address']);
+    $method_id = site::fp_clean($_POST['method_id']);
     // $pass= site::fp_hash($_POST['password']);
     $uid = $userid;
     // echo "<script>alert('".$bname."')</script>";
@@ -183,11 +187,11 @@ if(isset($_POST['email_submit'])){
 
     if(empty($error)){
     if(isset($_POST['bank'])){
-    $upd = mysqli_query($con,"UPDATE `mtn_momo` SET `info` = '$aname', `email` = '$address' WHERE `mtn_momo`.`wallet`='$userid'");
+    $upd = mysqli_query($con,"UPDATE `payment_acc_tb` SET `info` = '$aname', `email` = '$address', `method`=  '$bname', `plan_id`=  '$method_id' WHERE `payment_acc_tb`.`user_id`='$userid'");
 
     if($upd){
 
-        $updpay = mysqli_query($con,"UPDATE `user` SET `payment_method`=  '$bname', `payment_ready`= 'yes' WHERE `user`.`username` = '$userid'") or die(mysqli_error($con));
+        $updpay = DB::query("UPDATE `status_tb` SET `is_setup`=  `is_setup`+1, `payment_ready`= 'yes' WHERE `status_tb`.`user_id` = '$userid'");
 
         if($updpay){
             echo '<div class="alert alert-success alert-dismissible" role="alert">
@@ -221,6 +225,7 @@ if(isset($_POST['crypto_submit'])){
     $bname =  site::fp_clean($_POST['bank']);
     // $aname =  mysqli_real_escape_string($con,$_POST['accName']);
     $address =  site::fp_clean($_POST['address']);
+    $method_id = site::fp_clean($_POST['method_id']);
     // $pass= site::fp_hash($_POST['password']);
     $uid = $userid;
     // echo "<script>alert('".$bname."')</script>";
@@ -232,7 +237,7 @@ if(isset($_POST['crypto_submit'])){
         $error .='<li>Account number Min. 10 Max. 100 Characters eg: fhdithdaptq343r8h8rb8hrdee</li>';
     }
 
-    // $cks = mysqli_query($con,"SELECT * FROM `user` WHERE `username`='$uid'");
+    // $cks = mysqli_query($con,"SELECT * FROM `user` WHERE `userncxame`='$uid'");
     //
     // $ck = mysqli_fetch_array($cks);
     // if($ck['password'] != $pass){
@@ -241,11 +246,11 @@ if(isset($_POST['crypto_submit'])){
 
     if(empty($error)){
     if(isset($_POST['bank'])){
-    $upd = mysqli_query($con,"UPDATE `mtn_momo` SET `address` = '$address' WHERE `mtn_momo`.`wallet`='$userid'");
+    $upd = DB::query($con,"UPDATE `payment_acc_tb` SET `address` = '$address', `method`=  '$bname', `plan_id`=  '$method_id' WHERE `payment_acc_tb`.`user_id`='$userid'");
 
     if($upd){
 
-        $updpay = mysqli_query($con,"UPDATE `user` SET `payment_method`=  '$bname', `payment_ready`= 'yes' WHERE `user`.`username` = '$userid'") or die(mysqli_error($con));
+        $updpay = DB::query("UPDATE `status_tb` SET `is_setup`=  `is_setup`+1, `payment_ready`= 'yes' WHERE `status_tb`.`user_id` = '$userid'");
 
         if($updpay){
             echo '<div class="alert alert-success alert-dismissible" role="alert">
@@ -280,6 +285,7 @@ if(isset($_POST['api_submit'])){
     $bname = site::fp_clean($_POST['bank']);
     $aname = site::fp_clean($_POST['accName']);
     $ano = site::fp_clean($_POST['accNo']);
+    $method_id = site::fp_clean($_POST['method_id']);
     // $pass= site::fp_hash($_POST['password']);
     $uid = $userid;
     // echo "<script>alert('".$bname."')</script>";
@@ -302,11 +308,11 @@ if(isset($_POST['api_submit'])){
 
     if(empty($error)){
     if(isset($_POST['bank'])){
-    $upd = mysqli_query($con,"UPDATE `api_reference_tb` SET `service_name` = '$aname', `ref_code` = '$ano' WHERE `mtn_momo`.`wallet`='$userid'");
+    $upd = DB::query($con,"UPDATE `api_reference_tb` SET `service_name` = '$aname', `ref_code` = '$ano' WHERE `mtn_momo`.`wallet`='$userid'");
 
     if($upd){
 
-        $updpay = mysqli_query($con,"UPDATE `user` SET `payment_method`=  '$bname', `payment_ready`= 'yes' WHERE `user`.`username` = '$userid'") or die(mysqli_error($con));
+        $updpay = DB::query($con,"UPDATE `status_tb` SET `is_setup`=  `is_setup`+1, `payment_ready`= 'yes' WHERE `status_tb`.`user_id` = '$userid'");
 
         if($updpay){
             echo '<div class="alert alert-success alert-dismissible" role="alert">
@@ -343,6 +349,5 @@ echo '<center><div class="alert alert-danger alert-dismissible" role="alert">
                               <span class="sr-only">Close</span></button>
                               <strong>Oops Error Occurs!</strong><ol>'.$error.'</ol></div></center>';
 }
-
 
 ?>
