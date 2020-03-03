@@ -9,6 +9,7 @@
     $superpass_id = $_SESSION['id'];
     // echo $userid;
     $poweruser = DB::fetch("SELECT * FROM `users_tb` WHERE `id`='$userid'")[0];
+    $_username = $poweruser['username'];
     $powerwallet = DB::fetch("SELECT * FROM `wallet` WHERE `user_id`='$userid'")[0];
     $powerwalletInfo = DB::fetch("SELECT * FROM `payment_acc_tb` WHERE `user_id`='$userid'")[0];
     $powerstatus = DB::fetch("SELECT * FROM `status_tb` WHERE `user_id`='$userid'")[0];
