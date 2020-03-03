@@ -3,28 +3,28 @@
 ?>
 
 
-                            <div class="modal fade" id="PrivillagesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
-                                            <h4 class="modal-title" id="myModalLabel">Terms And Conditions</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                          <?php include ('../includes/views/termsnconditions.html'); ?>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-                                    <!-- /.modal-content -->
-                                 </div>
-                                <!-- /.modal-dialog -->
-                             </div>
+<div class="modal fade" id="PrivillagesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
+              <h4 class="modal-title" id="myModalLabel">Terms And Conditions</h4>
+          </div>
+          <div class="modal-body">
+            <?php include ('../includes/views/termsnconditions.html'); ?>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+      </div>
+      <!-- /.modal-content -->
+   </div>
+  <!-- /.modal-dialog -->
+</div>
 
 
 
-                             <div class="container">
+<div class="container">
 
 <div class="card o-hidden border-0 shadow-lg my-5">
   <div class="card-body p-0">
@@ -36,7 +36,7 @@
           <div class="text-center">
             <h1 class="h4 text-gray-900 mb-4">Almost Done, Now Lets Setup Your Acount!</h1>
             <p class="text-center text-primary"><?=$setupPageCaption?></p>
-            <p class="text-center">Fill all Feild Before clicking SignUp</p>
+            <p class="text-center">Fill all Feild Before clicking Setup</p>
             <hr class="clean">
           </div>
 
