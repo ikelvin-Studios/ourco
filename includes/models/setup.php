@@ -18,7 +18,8 @@
     switch ($setupPage) {
       case '0':
         // code...
-        header('location: ../pages');
+        header('location: pages');
+        exit;
         break;
 
       case '1':
@@ -41,7 +42,8 @@
 
       default:
         // code...
-        header('location: ../pages');
+        header('location: pages');
+        exit;
         break;
     }
 //echo '<script>alert("hey '.$setupPage.'")</script>';
