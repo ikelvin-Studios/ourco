@@ -1,4 +1,4 @@
-<form class="user" method="post" class="validator-form" action="#create">
+<form class="user" method="post" class="validator-form" action="#setup">
 
   <div class="form-group">
     <label class="control-label">Full Name (N.O.K.)</label>
@@ -9,10 +9,12 @@
     <input type="text" class="form-control" name="nok_relation" value="" placeholder="Enter your Relation with N.O.K."/>
   </div>
   <div class="form-group row">
-    <div class="col-sm-auto mb-3 mb-sm-0">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+      <label class="control-label">Phone (N.O.K.)</label>
       <input  id="phone" type="tel" class="form-control" name="phone">
     </div>
     <div class="col-sm-6">
+      <label class="control-label">Country (N.O.K.)</label>
       <select class="form-control" id="address-country" name="country"></select>
     </div>
     <div class="col-sm-12">
@@ -33,7 +35,7 @@
 
                   <hr class="dotted">
 
-  <input type="submit" class="btn btn-primary btn-user btn-block" value="Register Account" name="signup"/>
+  <input type="submit" class="btn btn-primary btn-user btn-block" value="Setup" name="setup"/>
   <hr>
   <!-- <a href="index.html" class="btn btn-google btn-user btn-block">
     <i class="fab fa-google fa-fw"></i> Register with Google
