@@ -18,13 +18,15 @@
         // echo '<script>alert("hey");</script>';
         //$raw_phone =  site::fp_clear($_POST['phone']);
         $uphone	= site::fp_clear($_POST['full_phone']);
-        $ufullname = site::fp_clear($_POST['firstNames'])." ".site::fp_clear($_POST['lastNames']);
+        $ufullname = site::fp_clear($_POST['fullNames']);
         // $lname = site::fp_clear($_POST['lastNames']);
         $uname = site::fp_clear($_POST['userNames']);
         $uemail = site::fp_clear($_POST['email']);
         $upass = site::fp_hash($_POST['password']);
         $upass2 = site::fp_hash($_POST['password2']);
         $ucountry	= site::fp_clear($_POST['country']);
+        $ugender	= site::fp_clear($_POST['gender']);
+        $udob = site::fp_clear($_POST['dob']);
         $promoCode = site::fp_clear($_POST['promo']);
         $ubonus = 0;
 
@@ -82,7 +84,7 @@
         if($upass != $upass2){
         $error .='<li>Password do not Match!</li>';
         }
-        if(mb_strlen($_POST['phone']) > 15 || mb_strlen($_POST['phone']) < 9){
+        if(mb_strlen($_POST['phone']) > 15 || mb_strlen($_POST['phone']) < 5){
             $error .='<li>Enter Your Correct Phone Number</li>';
         }
         // if(mb_strlen($_POST['whatsapp']) > 10 || mb_strlen($_POST['whatsapp']) < 9){
@@ -91,7 +93,7 @@
        // echo '<script>alert("ohey '.$error.'");</script>';
         if(empty($error)){
            // echo '<script>alert("ehey");</script>';
-            DB::query("INSERT INTO `users_tb` (`email`,`username`,`name`,`mobile`,`country`,`reg_date`) VALUES('$uemail','$uname','$ufullname','$uphone','$ucountry','$rgd')") or die(mysqli_error($pdo));
+            DB::query("INSERT INTO `users_tb` (`email`,`username`,`name`,`mobile`,`country`,`reg_date`,`gender`,`dob`) VALUES('$uemail','$uname','$ufullname','$uphone','$ucountry','$rgd','$ugender','$udob')") or die(mysqli_error($pdo));
 
             $u_id = DB::fetch("SELECT `id` FROM `users_tb` WHERE `username`='$uname'")[0]['id'];
 
