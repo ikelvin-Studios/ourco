@@ -64,6 +64,8 @@ if(isset($_POST['momo_submit'])){
                 $updpay = DB::query("UPDATE `status_tb` SET `is_setup`=  `is_setup`+1, `payment_ready`= 'yes' WHERE `status_tb`.`user_id` = '$userid'");
 
                 if($updpay){
+                  header('location: ../setup');
+                  exit;
                     echo '<div class="alert alert-success alert-dismissible" role="alert">
                     <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span>
                     <span class="sr-only">Close</span></button>
@@ -132,6 +134,8 @@ if(isset($_POST['bank_submit'])){
         $updpay = DB::query("UPDATE `status_tb` SET `is_setup`=  `is_setup`+1, `payment_ready`= 'yes' WHERE `status_tb`.`user_id` = '$userid'");
 
         if($updpay){
+          header('location: ../setup');
+          exit;
             echo '<div class="alert alert-success alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span>
             <span class="sr-only">Close</span></button>
@@ -194,6 +198,8 @@ if(isset($_POST['email_submit'])){
         $updpay = DB::query("UPDATE `status_tb` SET `is_setup`=  `is_setup`+1, `payment_ready`= 'yes' WHERE `status_tb`.`user_id` = '$userid'");
 
         if($updpay){
+          header('location: ../setup');
+          exit;
             echo '<div class="alert alert-success alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span>
             <span class="sr-only">Close</span></button>
@@ -253,6 +259,8 @@ if(isset($_POST['crypto_submit'])){
         $updpay = DB::query("UPDATE `status_tb` SET `is_setup`=  `is_setup`+1, `payment_ready`= 'yes' WHERE `status_tb`.`user_id` = '$userid'");
 
         if($updpay){
+          header('location: ../setup');
+          exit;
             echo '<div class="alert alert-success alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span>
             <span class="sr-only">Close</span></button>
@@ -315,6 +323,8 @@ if(isset($_POST['api_submit'])){
         $updpay = DB::query($con,"UPDATE `status_tb` SET `is_setup`=  `is_setup`+1, `payment_ready`= 'yes' WHERE `status_tb`.`user_id` = '$userid'");
 
         if($updpay){
+          header('location: ../setup');
+          exit;
             echo '<div class="alert alert-success alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span>
             <span class="sr-only">Close</span></button>
