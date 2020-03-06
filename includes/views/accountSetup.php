@@ -23,7 +23,7 @@
   </div>
   <div class="form-group">
     <label class="control-label">Username/ID</label>
-    <input type="text" class="form-control form-control-user input-disabled" id="exampleInputUname" placeholder="Username" name="userNames" disabled/>
+    <input type="text" class="form-control form-control-user input-disabled" id="exampleInputUname" placeholder="Username" name="userNames" value="<?=$_username?>" disabled/>
   </div>
   <div class="form-group row">
     <div class="col-sm-6 mb-3 mb-sm-0">
