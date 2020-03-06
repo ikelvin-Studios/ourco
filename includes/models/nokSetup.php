@@ -43,7 +43,10 @@
 
             if($action){
               $updpay = DB::query("UPDATE `status_tb` SET `is_setup`=  `is_setup`+1, `payment_ready`= 'yes' WHERE `status_tb`.`user_id` = '$userid'");
-              header('location: ../setup');
+
+              DB::query("INSERT INTO `timeline_tb` (`user_id`,`activity`,`act_type`) VALUES ('$userid','Next Of Kins setup','acc');");
+
+              header('location: setup');
               exit;
                 // echo '<script>alert("Registration was Succesful, Please Proceed to Login");window.location.assign("login");</script>';
             }
