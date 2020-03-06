@@ -70,7 +70,7 @@
          </div>
          <div class="col-lg-6">
              <label class="control-label">Registered Number</label>
-             <input type="text" class="form-control" name="accNo" placeholder="Registered Number" value="<?= site::fp_retain ($powerwalletInfo['acc_num']) ?>" required/>
+             <input type="text" class="form-control" name="accNo" placeholder="Registered Number" value="<?= site::fp_retain($powerwalletInfo['acc_num']) ?>" required/>
          <!-- <i class="fa fa-user panel-icon form-control-feedback"></i> -->
          </div>
      </div>
@@ -97,24 +97,24 @@
      <div class="row">
 <div class="col-lg-6">
              <label class="control-label">Bank Name</label>
-<input type="text" class="form-control" name="Bankname" placeholder="Bank Name" value="<?=  site::fp_retain($poweruser['Bankname']) ?>" required/>
+<input type="text" class="form-control" name="Bankname" placeholder="Bank Name" value="<?=  site::fp_retain($powerwalletInfo['bank']) ?>" required/>
 <!-- <i class="fa fa-user panel-icon form-control-feedback"></i> -->
          </div>
          <div class="col-lg-6">
              <label class="control-label">Country</label>
-             <input type="text" class="form-control" name="bank_country" placeholder="Bank Location" value="<?= site::fp_retain ($poweruser['bank_country']) ?>" required/>
+             <input type="text" class="form-control" name="bank_country" placeholder="Bank Location" value="<?= site::fp_retain($powerwalletInfo['bank_country']) ?>" required/>
          <!-- <i class="fa fa-user panel-icon form-control-feedback"></i> -->
 </div></div>
 <br/> <?php } ?>
 <div class="row">
          <div class="col-lg-6">
              <label class="control-label">Account Name</label>
-<input type="text" class="form-control" name="accName" placeholder="Account Name" value="<?=  site::fp_retain($poweruser['accname']) ?>" required/>
+<input type="text" class="form-control" name="accName" placeholder="Account Name" value="<?=  site::fp_retain($powerwalletInfo['acc_name']) ?>" required/>
 <!-- <i class="fa fa-user panel-icon form-control-feedback"></i> -->
          </div>
          <div class="col-lg-6">
              <label class="control-label">Account Number</label>
-             <input type="text" class="form-control" name="accNo" placeholder="Account Number" value="<?= site::fp_retain ($poweruser['accno']) ?>" required/>
+             <input type="text" class="form-control" name="accNo" placeholder="Account Number" value="<?= site::fp_retain($powerwalletInfo['acc_num']) ?>" required/>
          <!-- <i class="fa fa-user panel-icon form-control-feedback"></i> -->
          </div>
      </div>
@@ -141,12 +141,12 @@
      <div class="row">
          <div class="col-lg-6">
              <label class="control-label">Account Holder Name</label>
-<input type="text" class="form-control" name="accName" placeholder="Account Holder Name" value="<?=  site::fp_retain($userpay_info) ?>" required/>
+<input type="text" class="form-control" name="accName" placeholder="Account Holder Name" value="<?=  site::fp_retain($powerwalletInfo['acc_name']) ?>" required/>
 <!-- <i class="fa fa-user panel-icon form-control-feedback"></i> -->
          </div>
          <div class="col-lg-6">
              <label class="control-label">Account Address</label>
-             <input type="text" class="form-control" name="address" placeholder="Account Address" value="<?= site::fp_retain ($userpay_email) ?>" required/>
+             <input type="text" class="form-control" name="address" placeholder="Account Address" value="<?= site::fp_retain($powerwalletInfo['email']) ?>" required/>
          <!-- <i class="fa fa-user panel-icon form-control-feedback"></i> -->
          </div>
      </div>
@@ -176,7 +176,7 @@
        <!--   </div> -->
          <div class="col-lg-12">
              <label class="control-label">Account Recievers Address</label>
-             <input type="text" class="form-control" name="address" placeholder="Account Address" value="<?= site::fp_retain ($userpay_address) ?>" required/>
+             <input type="text" class="form-control" name="address" placeholder="Account Address" value="<?= site::fp_retain($powerwalletInfo['address']) ?>" required/>
          <!-- <i class="fa fa-user panel-icon form-control-feedback"></i> -->
          </div>
      </div>
@@ -203,12 +203,12 @@
      <div class="row">
          <div class="col-lg-6">
              <label class="control-label">API Info</label>
-<input type="text" class="form-control" name="accName" placeholder="API Info" value="<?=  site::fp_retain($poweruser['accname']) ?>" required/>
+<input type="text" class="form-control" name="accName" placeholder="API Info" value="<?=  site::fp_retain($powerwalletInfo['acc_name']) ?>" required/>
 <!-- <i class="fa fa-user panel-icon form-control-feedback"></i> -->
          </div>
          <div class="col-lg-6">
              <label class="control-label">API Reference</label>
-             <input type="text" class="form-control" name="accNo" placeholder="API Reference" value="<?= site::fp_retain ($poweruser['accno']) ?>" required/>
+             <input type="text" class="form-control" name="accNo" placeholder="API Reference" value="<?= site::fp_retain ($powerwalletInfo['acc_num']) ?>" required/>
          <!-- <i class="fa fa-user panel-icon form-control-feedback"></i> -->
          </div>
      </div>
