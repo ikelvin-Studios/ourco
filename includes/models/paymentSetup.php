@@ -63,8 +63,10 @@ if(isset($_POST['momo_submit'])){
 
                 $updpay = DB::query("UPDATE `status_tb` SET `is_setup`=  `is_setup`+1, `payment_ready`= 'yes' WHERE `status_tb`.`user_id` = '$userid'");
 
+                  DB::query("INSERT INTO `timeline_tb` (`user_id`,`activity`,`act_type`) VALUES ('$userid','Payment setup','acc');");
+
                 if($updpay){
-                  header('location: ../setup');
+                  header('location: setup');
                   exit;
                     echo '<div class="alert alert-success alert-dismissible" role="alert">
                     <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span>
@@ -133,8 +135,10 @@ if(isset($_POST['bank_submit'])){
 
         $updpay = DB::query("UPDATE `status_tb` SET `is_setup`=  `is_setup`+1, `payment_ready`= 'yes' WHERE `status_tb`.`user_id` = '$userid'");
 
+        DB::query("INSERT INTO `timeline_tb` (`user_id`,`activity`,`act_type`) VALUES ('$userid','Payment setup','acc');");
+
         if($updpay){
-          header('location: ../setup');
+          header('location: setup');
           exit;
             echo '<div class="alert alert-success alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span>
@@ -193,12 +197,14 @@ if(isset($_POST['email_submit'])){
     if(isset($_POST['bank'])){
     $upd = mysqli_query($con,"UPDATE `payment_acc_tb` SET `info` = '$aname', `email` = '$address', `method`=  '$bname', `plan_id`=  '$method_id' WHERE `payment_acc_tb`.`user_id`='$userid'");
 
+    DB::query("INSERT INTO `timeline_tb` (`user_id`,`activity`,`act_type`) VALUES ('$userid','Payment setup','acc');");
+
     if($upd){
 
         $updpay = DB::query("UPDATE `status_tb` SET `is_setup`=  `is_setup`+1, `payment_ready`= 'yes' WHERE `status_tb`.`user_id` = '$userid'");
 
         if($updpay){
-          header('location: ../setup');
+          header('location: setup');
           exit;
             echo '<div class="alert alert-success alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span>
@@ -253,13 +259,16 @@ if(isset($_POST['crypto_submit'])){
     if(empty($error)){
     if(isset($_POST['bank'])){
     $upd = DB::query($con,"UPDATE `payment_acc_tb` SET `address` = '$address', `method`=  '$bname', `plan_id`=  '$method_id' WHERE `payment_acc_tb`.`user_id`='$userid'");
+    
 
     if($upd){
 
         $updpay = DB::query("UPDATE `status_tb` SET `is_setup`=  `is_setup`+1, `payment_ready`= 'yes' WHERE `status_tb`.`user_id` = '$userid'");
 
+        DB::query("INSERT INTO `timeline_tb` (`user_id`,`activity`,`act_type`) VALUES ('$userid','Payment setup','acc');");
+
         if($updpay){
-          header('location: ../setup');
+          header('location: setup');
           exit;
             echo '<div class="alert alert-success alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span>
@@ -322,8 +331,10 @@ if(isset($_POST['api_submit'])){
 
         $updpay = DB::query($con,"UPDATE `status_tb` SET `is_setup`=  `is_setup`+1, `payment_ready`= 'yes' WHERE `status_tb`.`user_id` = '$userid'");
 
+        DB::query("INSERT INTO `timeline_tb` (`user_id`,`activity`,`act_type`) VALUES ('$userid','Payment setup','acc');");
+
         if($updpay){
-          header('location: ../setup');
+          header('location: setup');
           exit;
             echo '<div class="alert alert-success alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span>
