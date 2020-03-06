@@ -22,8 +22,9 @@
         // $lname = site::fp_clear($_POST['lastNames']);
         $uname = site::fp_clear($_POST['userNames']);
         $uemail = site::fp_clear($_POST['email']);
-        $upass = site::fp_hash($_POST['password']);
-        $upass2 = site::fp_hash($_POST['password2']);
+        $upass1 = site::fp_clear($_POST['password']);
+        $upass2 = site::fp_clear($_POST['password2']);
+        $upass = site::pass_hash($upass1);
         $ucountry	= site::fp_clear($_POST['country']);
         $ugender	= site::fp_clear($_POST['gender']);
         $udob = site::fp_clear($_POST['dob']);
@@ -54,7 +55,7 @@
 
         if($refname !=""){
           // TODO: check before fetching
-            $referer = (DB::query("SELECT `id` FROM `users_tb` WHERE `username`='$refname'")) ? DB::fetch("SELECT `id` FROM `users_tb` WHERE `username`='$refname'")['id'] : 441;
+            $referer = (DB::fetch("SELECT `id` FROM `users_tb` WHERE `username`='$refname'")) ? DB::fetch("SELECT `id` FROM `users_tb` WHERE `username`='$refname'")[0]['id'] : 441;
         }
         else {
             $referer = 441;
@@ -72,7 +73,7 @@
         $error .= (DB::count("SELECT `phone` FROM `login_tb` WHERE `phone`='$uphone'") > 0) ? '<li> Phone Already Exists!   </li>' : '' ;
        // echo '<script>alert("whey '.$error.'");</script>';
 
-        if(empty($ufullname) || empty($uname) || empty($uphone) || empty($uemail) || empty($ucountry)){
+        if(empty($ufullname) || empty($upass) || empty($uname) || empty($uphone) || empty($uemail) || empty($ucountry)){
             $error .='<li>All Fields are Required!</li>';
         }
         if(mb_strlen($ufullname) > 130){
@@ -81,7 +82,13 @@
         if(mb_strlen($uname) > 15){
             $error .='<li>Username Cannot be more than 15 Characters!</li>';
         }
-        if($upass != $upass2){
+        if (preg_match('/[a-zA-Z0-9_]+/', $uname)) {
+          $error .='<li>Username is Invalid, You can only use letters, numbers and underscores in usernames!</li>';
+        }
+        if (filter_var($uemail, FILTER_VALIDATE_EMAIL)) {
+          $error .='<li>Email is Invalid, Please Use Valid Commercial or company email!</li>';
+        }
+        if($upass1 != $upass2){
         $error .='<li>Password do not Match!</li>';
         }
         if(mb_strlen($_POST['phone']) > 15 || mb_strlen($_POST['phone']) < 5){
@@ -97,7 +104,7 @@
 
             $u_id = DB::fetch("SELECT `id` FROM `users_tb` WHERE `username`='$uname'")[0]['id'];
 
-            DB::query("INSERT INTO `login_tb` (`username`,`password`, `user_id`) VALUES('$uname','$upass','$u_id')") or die(mysqli_error($pdo));
+            DB::query("INSERT INTO `login_tb` (`username`,`password`, `user_id`,`standard`) VALUES('$uname','$upass','$u_id',2);");
 
             DB::query("INSERT INTO `referal_tb` (`referer`, `referee`) VALUES ('$referer', '$u_id');");
             // TODO: wallet
