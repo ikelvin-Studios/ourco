@@ -5,13 +5,14 @@
 //     $target_value = $_GET['target_value'];
 
 //   echo '<script>alert("'.$target_value.'")</script>';
-        
+
 // }
 
 
 
 	Class site {
-
+    public static $pepper = "ourcoP@55w0RD41#";
+    // self::$pepper
 
 		public static function fp_percent(){
 			global $webcent;
@@ -73,7 +74,7 @@
 			else{
 				return true;
 			}
-			
+
 		}
 		public static function fp_isAdmin($admin){
 			if(isset($_SESSION['id']) AND $_SESSION['login_type'] == "admin"){
@@ -150,8 +151,14 @@
 		public static function fp_clean($code){
 			return htmlspecialchars($code);
 		}
-		public static function fp_hash($code){
+    public static function fp_hash($code){
 			return md5(base64_encode($code));
+		}
+		public static function pass_hash($code){
+			return password_hash(hash_hmac("sha256", $code, self::$pepper), PASSWORD_DEFAULT);
+		}
+    public static function pass_check($code, $pwd_hashed){
+			return password_verify(hash_hmac("sha256", $code, self::$pepper), $pwd_hashed);
 		}
 		public static function fp_retain($code){
 			return htmlentities($code);
@@ -432,12 +439,12 @@
 				<option data-countryCode="ZM" value="+260">Zambia (+260)</option>
 				<option data-countryCode="ZW" value="+263">Zimbabwe (+263)</option>
 			</optgroup>';
-			
+
 			}
 	}
 
 
-	
 
-       
+
+
 ?>
