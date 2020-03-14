@@ -82,10 +82,10 @@
         if(mb_strlen($uname) > 15){
             $error .='<li>Username Cannot be more than 15 Characters!</li>';
         }
-        if (preg_match('/[a-zA-Z0-9_]+/', $uname)) {
+        if (!preg_match('/[a-zA-Z0-9_]+/', $uname)) {
           $error .='<li>Username is Invalid, You can only use letters, numbers and underscores in usernames!</li>';
         }
-        if (filter_var($uemail, FILTER_VALIDATE_EMAIL)) {
+        if (!filter_var($uemail, FILTER_VALIDATE_EMAIL)) {
           $error .='<li>Email is Invalid, Please Use Valid Commercial or company email!</li>';
         }
         if($upass1 != $upass2){

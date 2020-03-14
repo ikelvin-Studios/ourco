@@ -44,7 +44,7 @@
             $error .='<li>Enter Your Correct Phone Number</li>';
         }
 
-        if (filter_var($uemail, FILTER_VALIDATE_EMAIL)) {
+        if (!filter_var($uemail, FILTER_VALIDATE_EMAIL)) {
           $error .='<li>Email is Invalid, Please Use Valid Commercial or company email!</li>';
         }
 
