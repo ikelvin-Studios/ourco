@@ -19,6 +19,7 @@ if (file_exists('../includes/views/'.$viewName.'.php'))
             header('location: ../setup');
             exit;
           }
+          require ('../includes/models/'.$viewName.'.php');
 
           echo'<!DOCTYPE html>
           <html lang="en">';
@@ -52,34 +53,34 @@ if (file_exists('../includes/views/'.$viewName.'.php'))
  ?>
 
           <div class="modal fade" id="startupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-lg">
-                                    <div class="modal-content">
-                                        <!-- <div class="modal-header"><form action="#" method="GET">
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                            <h4 class="modal-title" id="myModalLabel">Get Started</h4>
-                                        </div> -->
-                                        <div class="modal-body">
-                                        <div class="row"><div class="col-md-12">
-                                        <center>
-                                        <img class="img img-fluid img-responsive" src="../static/img/welcome0.jpg" /></center>
-                                        </div></div>
-<h3 class="text-center mt-2">Welcome Back, Appologies for the delay in rolling out the next level and thanks for your pricelesss time, by the way we have some cards for you.</h3>
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <!-- <div class="modal-header"><form action="#" method="GET">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Get Started</h4>
+                    </div> -->
+                    <div class="modal-body">
+                    <div class="row"><div class="col-md-12">
+                    <center>
+                    <img class="img img-fluid img-responsive" src="../static/img/welcome0.jpg" /></center>
+                    </div></div>
+                    <h3 class="text-center mt-2">Welcome Back, Appologies for the delay in rolling out the next level and thanks for your pricelesss time, by the way we have some cards for you.</h3>
 
-<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#large-modal">Extra large modal</button> -->
+                    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#large-modal">Extra large modal</button> -->
 
-                                            <br/>
+                        <br/>
 
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-check-circle text-primary"></i> Get Started</button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-check-circle text-primary"></i> Get Started</button>
 
-                                        </form>
-                                        </div>
-                                    </div>
-                                    <!-- /.modal-content -->
-                                 </div>
-                                <!-- /.modal-dialog -->
-                             </div>
+                    </form>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+             </div>
+            <!-- /.modal-dialog -->
+         </div>
 
                              <!-- <h2 class="heading"><i class="fa fa-square"></i> Modals</h2>
 							<button type="button" class="btn btn-default" data-toggle="modal" data-target="#large-modal">Large modal</button>
@@ -193,7 +194,7 @@ require_once("../includes/models/dashboard-modals.php");
 
  ?>
 
-<script type="text/javascript" id="editable">
+<!-- <script type="text/javascript" id="editable">
 console.log("hey");
 	var loaderBar;
 	var stage;
@@ -321,4 +322,6 @@ console.log("hey");
 		loaderBar.visible = false;
 		stage.update();
 	}
-</script>
+</script> -->
+</body>
+</html>
