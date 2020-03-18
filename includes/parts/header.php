@@ -177,11 +177,11 @@
 
                 <a class="dropdown-item d-flex align-items-center">
                   <div class= "mr-3">
-                      <div><i class="fa fa-money fa-fw"></i> <?= site::fp_retain($powerwallet['available']) ?></div>
+                      <div><i class="fa fa-money fa-fw"></i> <?= site::fp_retain($powerwallet['reserved']) ?></div>
                           <span class="pull-right text-muted small"><i class="fas fa-database fa-sm fa-fw"></i> OurCoin</span>
                   </div>
                   <div class="font-weight-bold pull-right">
-                    <div class="text-truncate"> = <?= $user_currency_symbol ?> <?= site::fp_retain($powerwallet['available']) ?></div>
+                    <div class="text-truncate"> = <?= $user_currency_symbol ?> <?= site::fp_retain($powerwallet['reserved']) ?></div>
                     <div class="text-gray-500"><i class="badge badge-danger badge-counter ">Reserved In Wallet</i></div>
                   </div>
                   <div class="ml-3 pull-right">
@@ -191,11 +191,11 @@
 
                 <a class="dropdown-item d-flex align-items-center">
                   <div class= "mr-3">
-                      <div><i class="fa fa-money fa-fw"></i> <?= site::fp_retain($powerwallet['available']) ?></div>
+                      <div><i class="fa fa-money fa-fw"></i> <?= site::fp_retain($powerwallet['bonus']) ?></div>
                           <span class="pull-right text-muted small"><i class="fas fa-database fa-sm fa-fw"></i> OurCoin</span>
                   </div>
                   <div class="font-weight-bold pull-right">
-                    <div class="text-truncate"> = <?= $user_currency_symbol ?> <?= site::fp_retain($powerwallet['available']) ?></div>
+                    <div class="text-truncate"> = <?= $user_currency_symbol ?> <?= site::fp_retain($powerwallet['bonus']) ?></div>
                     <div class="text-gray-500"><i class="badge badge-danger badge-counter ">Bonus In Wallet</i></div>
                   </div>
                   <div class="ml-3 pull-right">
