@@ -15,7 +15,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="../pages">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -24,41 +24,61 @@
       <hr class="sidebar-divider">
 
       <!-- Heading -->
-      <!-- <div class="sidebar-heading">
-        BackOffice
-      </div> -->
+      <div class="sidebar-heading">
+        Management
+      </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
-      <!-- <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
           <span>Super Admin</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">SuperAdmin:</h6>
-            <a class="collapse-item" href="buttons.html">Buttons</a>
-            <a class="collapse-item" href="cards.html">Cards</a>
+            <h6 class="collapse-header">Operation:</h6>
+            <a class="collapse-item" href="../admin/">Admins</a>
+            <a class="collapse-item" href="../admin/">Investment Plans</a>
+            <a class="collapse-item" href="../admin/">Payment Method</a>
+            <a class="collapse-item" href="../admin/">Site Settings</a>
           </div>
         </div>
-      </li> -->
+      </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
-      <!-- <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdmin" aria-expanded="true" aria-controls="collapseAdmin">
           <i class="fas fa-fw fa-wrench"></i>
           <span>Admin</span>
         </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+        <div id="collapseAdmin" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Admin:</h6>
-            <a class="collapse-item" href="utilities-color.html">Colors</a>
-            <a class="collapse-item" href="utilities-border.html">Borders</a>
-            <a class="collapse-item" href="utilities-animation.html">Animations</a>
-            <a class="collapse-item" href="utilities-other.html">Other</a>
+            <h6 class="collapse-header">Operations:</h6>
+            <a class="collapse-item" href="../admin/manageFunds">Funds</a>
+            <a class="collapse-item" href="../admin/manageInvestments">Investments</a>
+            <a class="collapse-item" href="../admin/manageMembers">Members</a>
+            <a class="collapse-item" href="../admin/manageReturns">Returns</a>
+            <a class="collapse-item" href="../admin/manageWithdraws">Withdraws</a>
           </div>
         </div>
-      </li> -->
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseStaff" aria-expanded="true" aria-controls="collapseStaff">
+          <i class="fas fa-fw fa-plus-circle"></i>
+          <span>Staff</span>
+        </a>
+        <div id="collapseStaff" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Addons:</h6>
+            <a class="collapse-item" href="../admin/webmail">Webmail</a>
+            <a class="collapse-item" href="../admin/tawk">LiveChat</a>
+            <a class="collapse-item" href="../admin/manageReports">Reports</a>
+            <a class="collapse-item" href="../admin/Stats">Stats</a>
+          </div>
+        </div>
+      </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider">
@@ -69,7 +89,7 @@
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-wallet"></i>
           <span>Funds</span>
@@ -79,18 +99,23 @@
             <h6 class="collapse-header">Wallet:</h6>
             <a class="collapse-item" href="">Add Funds</a>
             <a class="collapse-item" href="">Withdraw Funds</a>
-            <!-- <a class="collapse-item" href="forgot-password.html">Forgot Password</a> -->
             <div class="collapse-divider"></div>
             <h6 class="collapse-header">Extras:</h6>
-            <!-- <a class="collapse-item" href="404.html">404 Page</a> -->
             <a class="collapse-item" href="">Activity Log</a>
           </div>
         </div>
+      </li> -->
+
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href="../pages/funds">
+          <i class="fas fa-fw fa-wallet"></i>
+          <span>Wallet/Funds</span></a>
       </li>
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="../pages/assets">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Investments</span></a>
       </li>
