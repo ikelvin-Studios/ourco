@@ -8,7 +8,7 @@
 
 // $user_info = data::users_tb()[0];
 
-require ('../includes/models/dashboard.php');
+// require ('../includes/models/dashboard.php');
 ?>
 
 
@@ -29,11 +29,11 @@ require ('../includes/models/dashboard.php');
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-3 mb-4">
+                <div class="col-lg-6 mb-4">
                   <div class="card bg-success text-white shadow">
                     <div class="card-body">
-                      2019 Profit
-                      <div class="text-white-50 small"><i class="fas fa-database fa-sm fa-fw"></i><?= $settlement['profit']?> Balance</div>
+                      2019 Profit & 2020 Profit Growth-Cut
+                      <div class="text-white-50 small"><i class="fas fa-database fa-sm fa-fw"></i><?= $settlement['profit']?> Balance <span class="text-danger large bg-warning pl-2 pr-2"> On Dec 31, 2019</span></div>
                     </div>
                   </div>
                 </div>
@@ -54,31 +54,33 @@ require ('../includes/models/dashboard.php');
                   </div>
                 </div>
                 <div class="col-lg-3 mb-4">
-                  <div class="card bg-danger text-white shadow">
+                  <div class="card bg-secondary text-white shadow">
                     <div class="card-body">
-                      Token For Corrections
-                      <div class="text-white-50 small"><i class="fas fa-database fa-sm fa-fw"></i><?= $settlement['token']?> Free Settlement</div>
+                      Reserved Wallet
+                      <div class="text-white-50 small"><i class="fas fa-database fa-sm fa-fw"></i><?= $settlement['reserved']?> Balance</div>
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-3 mb-4">
+                <!-- <div class="col-lg-3 mb-4">
                   <div class="card bg-secondary text-white shadow">
                     <div class="card-body">
                       2020 Profit Growth-Cut
-                      <div class="text-white-50 small"><i class="fas fa-database fa-sm fa-fw"></i><?= $settlement['profit_cut']?> <span class="text-danger large bg-warning pl-2 pr-2"> On Dec 31, 2019</span></div>
+                      <div class="text-white-50 small"><i class="fas fa-database fa-sm fa-fw"></i><?//= $settlement['profit_cut']?> <span class="text-danger large bg-warning pl-2 pr-2"> On Dec 31, 2019</span></div>
                     </div>
                   </div>
-                </div>
+                </div> -->
                 <div class="col-lg-6 mb-4">
                   <div class="card bg-pink text-primary shadow">
                   <div class="row">
                     <div class="card-body col-lg-6">
-                      Total: <i class="fas fa-database fa-sm fa-fw"></i>200 Cashout as ->
-                      <div class="text-primary-50 small"><i class="fas fa-database fa-sm fa-fw"></i><?= $settlement['investment'] + $settlement['wallet_balance'] + $settlement['profit'] + $settlement['profit_cut'] + $settlement['token']?> to Reserved + <i class="fas fa-database fa-sm fa-fw"></i><?= $settlement['bonus']?> to Bonus</div>
+                      Total: <i class="fas fa-database fa-sm fa-fw"></i><?= $totalSettle?> Cash In as ->
+                      <div class="text-primary-50 small"><i class="fas fa-database fa-sm fa-fw"></i><?= $totalSettle?> to Reserved
+                         <!-- + <i class="fas fa-database fa-sm fa-fw"></i><?//= $settlement['bonus']?> to Bonus -->
+                       </div>
                     </div>
                     <a href="#" class="card-body bg-primary text-white col-lg-6">
-                      Cashout <i class="fas fa-wallet fa-fw"></i>
-                      <div class="text-white-50 small"><i class="fas fa-sign-out-alt fa-sm fa-fw"></i>Click To Cashout</div>
+                      Cash In <i class="fas fa-wallet fa-fw"></i>
+                      <div class="text-white-50 small"><i class="fas fa-sign-out-alt fa-sm fa-fw"></i>Click To Cash In</div>
                     </a>
                   </div>
                   </div>
@@ -212,121 +214,7 @@ require ('../includes/models/dashboard.php');
                   </div>
                 </div>
                 <!-- Card Body -->
-<style>
-  .timeline {
-    margin: 0 0 45px;
-    padding: 0;
-    position: relative;
-  }
 
-  .timeline::before {
-    border-radius: 0.25rem;
-    background: #dee2e6;
-    bottom: 0;
-    content: '';
-    left: 31px;
-    margin: 0;
-    position: absolute;
-    top: 0;
-    width: 4px;
-  }
-
-  .timeline > div {
-    margin-bottom: 15px;
-    margin-right: 10px;
-    position: relative;
-  }
-
-  .timeline > div::before, .timeline > div::after {
-    content: "";
-    display: table;
-  }
-
-  .timeline > div > .timeline-item {
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.125), 0 1px 3px rgba(0, 0, 0, 0.2);
-    border-radius: 0.25rem;
-    background: #ffffff;
-    color: #495057;
-    margin-left: 60px;
-    margin-right: 15px;
-    margin-top: 0;
-    padding: 0;
-    position: relative;
-  }
-
-  .timeline > div > .timeline-item > .time {
-    color: #999;
-    float: right;
-    font-size: 12px;
-    padding: 10px;
-  }
-
-  .timeline > div > .timeline-item > .timeline-header {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-    color: #495057;
-    font-size: 16px;
-    line-height: 1.1;
-    margin: 0;
-    padding: 10px;
-  }
-
-  .timeline > div > .timeline-item > .timeline-header > a {
-    font-weight: 600;
-  }
-
-  .timeline > div > .timeline-item > .timeline-body,
-  .timeline > div > .timeline-item > .timeline-footer {
-    padding: 10px;
-  }
-
-  .timeline > div > .timeline-item > .timeline-body > img {
-    margin: 10px;
-  }
-
-  .timeline > div > .timeline-item > .timeline-body > dl, .timeline > div > .timeline-item > .timeline-body ol, .timeline > div > .timeline-item > .timeline-body ul {
-    margin: 0;
-  }
-
-  .timeline > div > .timeline-item > .timeline-footer > a {
-    color: #ffffff;
-  }
-
-  .timeline > div > .fa,
-  .timeline > div > .fas,
-  .timeline > div > .far,
-  .timeline > div > .fab,
-  .timeline > div > .glyphicon,
-  .timeline > div > .ion {
-    background: #adb5bd;
-    border-radius: 50%;
-    font-size: 15px;
-    height: 30px;
-    left: 18px;
-    line-height: 30px;
-    position: absolute;
-    text-align: center;
-    top: 0;
-    width: 30px;
-  }
-
-  .timeline > .time-label > span {
-    border-radius: 4px;
-    background-color: #ffffff;
-    display: inline-block;
-    font-weight: 600;
-    padding: 5px;
-  }
-
-  .timeline-inverse > div > .timeline-item {
-    box-shadow: none;
-    background: #f8f9fa;
-    border: 1px solid #dee2e6;
-  }
-
-  .timeline-inverse > div > .timeline-item > .timeline-header {
-    border-bottom-color: #dee2e6;
-  }
-</style>
                 <div class="card-body">
 
                 <div class="timeline timeline-inverse">
@@ -398,9 +286,7 @@ $i++;
                   </div>
                 </div>
                 <!-- Card Body -->
-                <style>
-                  .scroll-area{overflow-x:hidden;height:400px}.scroll-area-xs{height:150px;overflow-x:hidden}.scroll-area-sm{height:200px;overflow-x:hidden}.scroll-area-md{height:300px;overflow-x:hidden}.scroll-area-lg{height:400px;overflow-x:hidden}.scroll-area-x{overflow-x:auto;width:100%;max-width:100%}
-                </style>
+
 
                 <div class="main-card mb-3 card">
 
@@ -493,13 +379,13 @@ $i++;
 
                   <div class="mt-4 text-center small">
                     <span class="mr-2">
-                      <i class="fas fa-circle text-primary"></i> Direct
+                      <i class="fas fa-circle"></i> Unsettled
                     </span>
                     <span class="mr-2">
-                      <i class="fas fa-circle text-success"></i> Social
+                      <i class="fas fa-circle text-success"></i> Settled
                     </span>
                     <span class="mr-2">
-                      <i class="fas fa-circle text-info"></i> Referral
+                      <i class="fas fa-circle text-danger"></i> Banned
                     </span>
                   </div>
                 </div>
@@ -554,7 +440,7 @@ $i++;
                 <div class="card-body">
                   <p class="center"><b>Coming Soon</b></p>
                   <!-- <p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce CSS bloat and poor page performance. Custom CSS classes are used to create custom components and custom utility classes.</p> -->
-                  <p class="mb-0">Before we move to the next, We thank you for your preference and your time throughout the update session. We have a present for you to compensate for your time and its hidden in the cards above.</p>
+                  <p class="mb-0">Before we move to the next, We thank you for your preference and your time throughout the update session. We have a present for you to compensate for your time and it's hidden in the cards above.</p>
                   <p class="center"><b>NB: You can save the cards to clearly read our n<i class="fas fa-heart"></i>te</b></p>
                 </div>
               </div>
@@ -631,7 +517,7 @@ $i++;
                     <!-- <a target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a> -->
                     <!-- , a constantly updated collection of beautiful svg images that you can use completely free and without attribution!</p> -->
                     <br/>
-                    <p>To know what`s new in ourcomunity 3.0 </>
+                    <p>To know what's new in ourcomunity 3.0 </>
                   <a target="_blank" href="https://www.youtube.com/channel/UCtsKXK9lC6ShePjyh82aOkA">Please Subscribe To Our Youtube Channel &rarr;</a>
                 </div>
               </div>
