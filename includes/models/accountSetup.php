@@ -57,7 +57,7 @@
            // echo '<script>alert("ehey");</script>';
             DB::query("UPDATE `users_tb` SET  `email`='$uemail',`name`='$ufullname',`mobile`='$uphone',`country`='$ucountry',`reg_date`='$rgd',`gender`='$ugender',`dob`='$udob' WHERE `id`='$userid'") or die(mysqli_error($pdo));
 
-            DB::query("UPDATE `login_tb` SET `password`='$upass' AND `standard`=2 WHERE `user_id`='$userid'") or die(mysqli_error($pdo));
+            DB::query("UPDATE `login_tb` SET `password`='$upass', `standard`=2 WHERE `user_id`='$userid'") or die(mysqli_error($pdo));
 
             // DB::query("INSERT INTO `referal_tb` (`referer`, `referee`) VALUES ('$referer', '$u_id');");
             // TODO: wallet
@@ -74,9 +74,10 @@
 
 
             if($upd){
+              echo "pass: ".$upass;
               header('location: setup');
               exit;
-                echo '<script>alert("Registration was Succesful, Please Proceed to Login");window.location.assign("login");</script>';
+              //   echo '<script>alert("Registration was Succesful, Please Proceed to Login");window.location.assign("login");</script>';
             }
         } else {
             echo '<script>alert("ERROR: '.$error.'");</script>';
