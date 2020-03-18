@@ -1,5 +1,5 @@
 
- 
+
 
 
 
@@ -13,12 +13,21 @@
   <!-- Custom scripts for all pages-->
   <script src="../static/js/sb-admin-2.min.js"></script>
 
+
   <!-- Page level plugins -->
-  <script src="../static/vendor/chart.js/Chart.min.js"></script>
+  <script src="../static/vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="../static/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
   <!-- Page level custom scripts -->
-  <script src="../static/js/demo/chart-area-demo.js"></script>
-  <script src="../static/js/demo/chart-pie-demo.js"></script>
+  <script src="../static/js/demo/datatables-demo.js"></script>
+
+
+  <!-- Page level plugins -->
+  <!-- <script src="../static/vendor/chart.js/Chart.min.js"></script> -->
+
+  <!-- Page level custom scripts -->
+  <!-- <script src="../static/js/demo/chart-area-demo.js"></script>
+  <script src="../static/js/demo/chart-pie-demo.js"></script> -->
    <script src="../static/vendor/dropify/js/dropify.min.js"></script>
 
     <script>
@@ -50,21 +59,21 @@
     <!-- <script src="../static/dist/js/clipboard.min.js"></script> -->
 
 
-	<script src="../static/_assets/libs/easeljs-NEXT.min.js"></script>
+	<!-- <script src="../static/_assets/libs/easeljs-NEXT.min.js"></script>
 <script src="../static/_assets/libs/tweenjs-NEXT.min.js"></script>
 
-<script type="text/javascript" src="../static/_assets/libs/preloadjs-NEXT.js"></script>
+<script type="text/javascript" src="../static/_assets/libs/preloadjs-NEXT.js"></script> -->
 
 <!-- <link href="../static/_assets/css/shared.css" rel="stylesheet" type="text/css"/>
 	<link href="../static/_assets/css/examples.css" rel="stylesheet" type="text/css"/> -->
-	<script src="../static/_assets/js/examples.js"></script>
+	<!-- <script src="../static/_assets/js/examples.js"></script> -->
 
-	
+
     <!-- 2. Include library -->
     <script src="../static/dist/js/clipboard.min.js"></script>
 
     <!-- 3. Instantiate clipboard -->
-    
+
             <script>
     var clipboard = new ClipboardJS('.btn');
 

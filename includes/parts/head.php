@@ -14,7 +14,11 @@
 
   <!-- Custom styles for this template-->
   <link href="../static/css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="../static/css/main.css" rel="stylesheet">
 
   <link rel="stylesheet" href="../static/vendor/dropify/css/dropify.min.css">
+
+  <!-- Custom styles for this page -->
+ <link href="../static/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
