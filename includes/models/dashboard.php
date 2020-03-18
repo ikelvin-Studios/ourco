@@ -6,6 +6,7 @@ if($powerstatus['badge'] == '2019') {
 
 if($mustSettle == 'yes') {
   $settlement = DB::fetch("SELECT * FROM `settlement_tb` WHERE `user_id`='$userid'")[0];
+  $totalSettle = $settlement['investment'] + $settlement['wallet_balance'] + $settlement['profit'] + $settlement['reserved'] + $settlement['bonus'];
 }
 
 // $requests_no = DB::count("SELECT * FROM `requests_tb` WHERE `from_id` = '$userid' AND `status` = 'issued' OR `to_id` = '$userid' AND `status` = 'confirmed'");
