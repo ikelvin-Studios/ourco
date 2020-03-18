@@ -13,6 +13,11 @@
     RewriteRule ^(join)$ auth/index.php?url=$1 [NC,L]
     RewriteRule ^(setup)$ auth/index.php?url=$1 [NC,L]
     RewriteRule ^(logout)$ auth/index.php?url=$1 [NC,L]
+
+    RewriteRule ^(pages/funds)$ pages/index.php?url=$1 [NC,L]
+    RewriteRule ^(pages/assets)$ pages/index.php?url=$1 [NC,L]
+    RewriteRule ^(pages/setting)$ pages/index.php?url=$1 [NC,L]
+
 	RewriteRule ^developer$ https://ikelvin.co [NC,L]
     RewriteCond %{REQUEST_FILENAME}.php -f
     RewriteRule !.*\.php$ %{REQUEST_FILENAME}.php [L,QSA]
